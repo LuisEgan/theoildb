@@ -1,0 +1,30 @@
+{
+  "name": "theoildb",
+  "version": "1.0.0",
+  "description": "Check oil data and predictions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "oil",
+    "machine",
+    "learning",
+    "data",
+    "analysis"
+  ],
+  "author": "Luis Egan & Jesús Rangel",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.11"
+  }
+}
