@@ -7,7 +7,6 @@ import Header from './globals/Header';
 
 class App extends Component {
   render() {
-    const { isLoggedIn } = this.props;
     return (
       <div className='App'>
         <Header/>
@@ -19,8 +18,6 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  isLoggedIn: state.app.get('isLoggedIn'),
-});
+const mapStateToProps = state => (state);
 
 export default connect(mapStateToProps)(App);
