@@ -8,3 +8,35 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.App {
+  margin: 15% 5%; }
+
+.graphInfo {
+  height: 40vh;
+  width: 100%;
+  border: solid red; }
+  .graphInfo .row {
+    height: 100%; }
+    .graphInfo .row .cc {
+      height: 100%; }
+
+#header {
+  position: relative;
+  width: 100%;
+  border: solid 2px black;
+  padding-top: 120px; }
+  #header #logo-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -10vw;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 100%;
+    background: url("http://i0.kym-cdn.com/entries/icons/mobile/000/014/178/AyyyLmao.jpg");
+    background-position: center; }
+  #header #links-container .cc {
+    padding: 2%;
+    border: solid blue; }

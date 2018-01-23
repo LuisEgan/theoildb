@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // CUSTOM MODULES
 const keys = require('./config/keys');
 console.log(keys.mongoURI);
+
 // DB CONNECTION
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);

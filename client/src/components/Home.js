@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 
+import GraphInfo from './GraphInfo';
+
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-        AYY
-      </div>
+        <div id="home">
+            <GraphInfo /> 
+            <GraphInfo /> 
+            <GraphInfo /> 
+        </div>
     );
   }
 }
