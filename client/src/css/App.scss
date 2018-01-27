@@ -4,6 +4,14 @@
     align-items: center;
 }
 
+body {
+    background: url('../images/artic-pumper-bww.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .App {
     margin: 15% 5%;
 }
@@ -11,7 +19,8 @@
 .graphInfo {
     height: 40vh;
     width: 100%;
-    border: solid red;
+    color: white;
+    border: solid black;
 
     .row {
         height: 100%;
@@ -24,7 +33,6 @@
 #header {
     position: relative;
     width: 100%;
-    border: solid 2px black;
     padding-top: 120px;
     
     #logo-container {
@@ -33,17 +41,34 @@
         right: 0;
         margin: 0 auto;
         top: -10vw;
-        width: 20vw;
-        height: 20vw;
+        width: calc(10vw + 4em);
+        height: calc(10vw + 4em);
         border-radius: 100%;
-        background: url('http://i0.kym-cdn.com/entries/icons/mobile/000/014/178/AyyyLmao.jpg');
+        background: url('../images/round2.png');
+        background-size: calc(20vw + 6em);
         background-position: center;
     }
 
     #links-container {
+        margin: -2px;
         .cc {
             padding: 2%;
-            border: solid blue;
-        }
+            button {
+                background-color: black;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 10px;
+                border: none;
+            } 
+            button:hover { 
+                background-color: white;
+                color: black;
+                cursor: pointer;
+            }  
+        } 
     }
 }

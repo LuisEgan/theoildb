@@ -7,8 +7,6 @@ class Home extends Component {
     return (
         <div id="home">
             <GraphInfo /> 
-            <GraphInfo /> 
-            <GraphInfo /> 
         </div>
     );
   }

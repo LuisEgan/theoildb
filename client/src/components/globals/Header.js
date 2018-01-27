@@ -8,12 +8,12 @@ class Header extends Component {
 
         <div id="links-container" className="container">
             <div className="row">
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-2">ayy</div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-2"><button type="button">News</button></div>
             </div>
         </div>
         </div>

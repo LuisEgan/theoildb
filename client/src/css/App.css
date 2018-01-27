@@ -1,13 +1,23 @@
 .cc {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
+  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
+  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+
+body {
+  background: url("../images/artic-pumper-bww.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .App {
   margin: 15% 5%; }
@@ -15,7 +25,8 @@
 .graphInfo {
   height: 40vh;
   width: 100%;
-  border: solid red; }
+  color: white;
+  border: solid black; }
   .graphInfo .row {
     height: 100%; }
     .graphInfo .row .cc {
@@ -24,7 +35,6 @@
 #header {
   position: relative;
   width: 100%;
-  border: solid 2px black;
   padding-top: 120px; }
   #header #logo-container {
     position: absolute;
@@ -32,11 +42,27 @@
     right: 0;
     margin: 0 auto;
     top: -10vw;
-    width: 20vw;
-    height: 20vw;
+    width: calc(10vw + 4em);
+    height: calc(10vw + 4em);
     border-radius: 100%;
-    background: url("http://i0.kym-cdn.com/entries/icons/mobile/000/014/178/AyyyLmao.jpg");
+    background: url("../images/round2.png");
+    background-size: calc(20vw + 6em);
     background-position: center; }
-  #header #links-container .cc {
-    padding: 2%;
-    border: solid blue; }
+  #header #links-container {
+    margin: -2px; }
+    #header #links-container .cc {
+      padding: 2%; }
+      #header #links-container .cc button {
+        background-color: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none; }
+      #header #links-container .cc button:hover {
+        background-color: white;
+        color: black;
+        cursor: pointer; }
