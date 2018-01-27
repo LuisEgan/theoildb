@@ -63,12 +63,13 @@ body {
                 font-size: 16px;
                 border-radius: 10px;
                 border: none;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    cursor: pointer;
+                }
             } 
-            button:hover { 
-                background-color: white;
-                color: black;
-                cursor: pointer;
-            }  
         } 
     }
 }
