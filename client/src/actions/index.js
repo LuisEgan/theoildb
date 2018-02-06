@@ -3,5 +3,5 @@ import types from './types';
 
 export const getData = () => async dispatch => dispatch({
     type: types.GET_DATA,
-    payload: (await axios.get('/api/current_user')).data
+    payload: (await axios.get('/api/get_data'))
 });

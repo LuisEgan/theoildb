@@ -4,11 +4,14 @@ const bodyParser = require('body-parser');
 
 // CUSTOM MODULES
 const keys = require('./config/keys');
-console.log(keys.mongoURI);
+const fetchRoutes = require('./routes/fetch');
 
 // DB CONNECTION
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
+
+// MODELS
+require('./models/Data');
 
 const app = exppress();
 
@@ -16,7 +19,7 @@ const app = exppress();
 app.use(bodyParser.json());
 
 // ----- ROUTES
-
+fetchRoutes(app);
 
 // MAKE REACT WORK IN DEPLOYMENT
 if(process.env.NODE_ENV === 'production') {
@@ -30,7 +33,6 @@ if(process.env.NODE_ENV === 'production') {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
