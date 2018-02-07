@@ -15,17 +15,34 @@ class GraphInfo extends Component {
   }
 
   componentWillMount() {
-    // const { getData } = this.props;
-    // getData();
-    axios.get('/api/get_data_coll2').
+    const { graphName } = this.props;
+    let route;
+
+    switch( graphName ) {
+      case "HEHEHE":
+        route = '/api/get_data_coll2';
+        break;
+      case "PAPI":
+        route = '/api/get_data_coll';
+        break;
+      case "MMM":
+        route = '/api/get_data_ui';
+        break;
+      case "HE":
+        route = '/api/get_data_DICK';
+        break;
+    }
+
+    axios.get(route).
       then( function({data}) {
         this.setState({ data });
-      }.bind(this));
+      }.bind(this) );
   }
   
   render() {
+    const { info, graphName, graphType} = this.props;
     let { data } = this.state;
-    console.log(data);
+    
     const Dates = data.map( d => {
       return d.Date;
     });
@@ -50,11 +67,11 @@ class GraphInfo extends Component {
       <div className="container graphInfo">
         <div className="row">
             <div className="col-sm-6 cc">
-                <Graph data={data}/>
+                <Graph data={data} graphType={graphType}/>
             </div>
             
             <div className="col-sm-6 cc">
-                INFO
+                {info}
             </div>
         </div>
       </div>
