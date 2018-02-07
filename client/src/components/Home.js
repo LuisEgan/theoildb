@@ -7,7 +7,8 @@ class Home extends Component {
     return (
         <div id="home">
             <GraphInfo info="AYY LMAO" graphName="HEHEHE" graphType="Line"/>
-            <GraphInfo info="AYY LMAO" graphName="HEHEHE" graphType="Polar"/>
+            {/* <GraphInfo info="AYY LMAO" graphName="HEHEHE" graphType="Polar"/>
+            <GraphInfo info="AYY LMAO" graphName="HEHEHE" graphType="Doughnut"/> */}
         </div>
     );
   }

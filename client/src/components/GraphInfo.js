@@ -35,9 +35,15 @@ class GraphInfo extends Component {
 
     axios.get(route).
       then( function(PENE) {
-        console.log(PENE);
         this.setState({ data: PENE.data });
       }.bind(this) );
+  }
+
+  dataObject() {
+    const { graphType } = this.props;
+    let data = {};
+
+    return data;
   }
   
   render() {
@@ -63,6 +69,8 @@ class GraphInfo extends Component {
         }
       ]
     }
+
+    // data = this.dataObject(graphType);
 
     return (
       <div className="container graphInfo">
