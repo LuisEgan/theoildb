@@ -34,8 +34,9 @@ class GraphInfo extends Component {
     }
 
     axios.get(route).
-      then( function({data}) {
-        this.setState({ data });
+      then( function(PENE) {
+        console.log(PENE);
+        this.setState({ data: PENE.data });
       }.bind(this) );
   }
   

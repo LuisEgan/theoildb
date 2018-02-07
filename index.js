@@ -10,9 +10,6 @@ const fetchRoutes = require('./routes/fetch');
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
 
-// MODELS
-require('./models/Data');
-
 const app = exppress();
 
 // EXPRESS MIDDLEWARES app.use()
