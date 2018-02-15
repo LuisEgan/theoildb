@@ -1,0 +1,76 @@
+.cc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: url('../images/artic-pumper-bww.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.App {
+    margin: 15% 5%;
+}
+
+.graphInfo {
+    height: 100%;
+    width: 100%;
+    color: white;
+    border: solid black;
+
+    .row {
+        height: 100%;
+        background-color: rgba(168, 168, 168, 0.9);
+        .cc {
+            height: 100%;
+        }
+    }
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    padding-top: 120px;
+    
+    #logo-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -10vw;
+        width: calc(10vw + 4em);
+        height: calc(10vw + 4em);
+        border-radius: 100%;
+        background: url('../images/round2.png');
+        background-size: calc(20vw + 6em);
+        background-position: center;
+    }
+
+    #links-container {
+        margin: -2px;
+        .cc {
+            padding: 2%;
+            a {
+                background-color: black;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                border-radius: 10px;
+                border: none;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    cursor: pointer;
+                }
+            } 
+        } 
+    }
+}
