@@ -9,7 +9,7 @@ export const initialState = Map({
 const actionsMap = {
   [types.GET_DATA]: (state, action) => {
     const asyncStart = true;
-    const { data } = action.payload;
+    // const { data } = action.payload;
     return state.merge(Map({
         asyncStart,
     }));

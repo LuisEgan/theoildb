@@ -59,21 +59,21 @@ class GraphInfo extends Component {
         break;
     }
 
-    axios.get(route).
-      then( function(Data) {
+    axios.get(route)
+      .then( function(Data) {
         this.setState({ data: Data.data });
       }.bind(this) );
   }
 
   dataObject() {
-    const { graphType } = this.props;
+    // const { graphType } = this.props;
     let data = {};
 
     return data;
   }
   
   render() {
-    const { info, graphName, graphType} = this.props;
+    const { info, graphName } = this.props;
     let { data } = this.state;
 
 //    const Dates = data.dates.map( d => {
