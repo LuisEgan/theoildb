@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const positionsSchema = new Schema({
-    Dates: String,
+    Date: String,
     Value: Number,
     Arg: String
 });
