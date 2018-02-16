@@ -73,7 +73,7 @@ class GraphInfo extends Component {
   }
   
   render() {
-    const { info, graphName } = this.props;
+    const { info, graphName, graphType} = this.props;
     let { data } = this.state;
 
 //    const Dates = data.dates.map( d => {
