@@ -54,6 +54,9 @@ class GraphInfo extends Component {
       case "WeeklyDrills":
         route = '/api/get_data_weeklydrills';
         break;
+      default:
+        route = '/api/get_data_stocks';
+        break;
     }
 
     axios.get(route).
@@ -85,7 +88,6 @@ class GraphInfo extends Component {
       datasets: [
         {
           label: data.labela,
-          yAxesID: 'A',
           data: data.var1,
           backgroundColor: 'rgba(42, 145, 42, 0.2)',
           borderColor: 'rgba(42, 145, 42, 1)',
@@ -93,7 +95,6 @@ class GraphInfo extends Component {
         },
         {
           label: data.labelb,
-          yAxesID: 'B',
           data: data.var2,
           backgroundColor: 'rgba(145,40, 40, 0.2)',
           borderColor: 'rgba(145, 40, 40,1)',
@@ -102,33 +103,13 @@ class GraphInfo extends Component {
       ]
     }
 
-    let { options } = this.state;
-    options: {
-      scales: {
-        yAxes: [{
-          id: 'A',
-          type: 'linear',
-          position: 'left',
-        }, {
-          id: 'B',
-          type: 'linear',
-          position: 'right',
-          ticks: {
-            max: 1,
-            min: 0
-          }
-        }]
-      }
-    } 
-
-
     // data = this.dataObject(graphType);
 
     return (
       <div className="container graphInfo">
         <div className="row">
             <div className="col-sm-12 cc">
-                <Graph data={data} graphType={graphType} options={options}/>
+                <Graph data={data} graphType={graphType}/>
             </div>
             
             <div className="col-sm-12 cc">

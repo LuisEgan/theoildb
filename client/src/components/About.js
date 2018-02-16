@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GraphInfo from './GraphInfo';
+//import GraphInfo from './GraphInfo';
 
 class About extends Component {
   render() {
