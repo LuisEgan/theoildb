@@ -9,6 +9,7 @@ class Production extends Component {
             <GraphInfo info="Description" graphName="WeeklyDrills" graphType="Line"/>
             <GraphInfo info="Description" graphName="MonthlyDrills" graphType="Line"/>
             <GraphInfo info="Description" graphName="Production" graphType="Line"/>
+            <GraphInfo info="Description" graphName="Stocks" graphType="Line"/>
         </div>
     );
   }
