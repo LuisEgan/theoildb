@@ -10,7 +10,7 @@ import {
 class Chart extends React.Component {
 
     render() {
-        const { data, graphType} = this.props;
+        const { data, graphType, options} = this.props;
 
         const isLine = graphType === "Line";
         const isDoughnut = graphType === "Doughnut";

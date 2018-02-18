@@ -13,7 +13,7 @@ body {
 }
 
 .App {
-    margin: 15% 5%;
+    margin: 12% 5%;
 }
 
 .graphInfo {
@@ -27,6 +27,8 @@ body {
         background-color: rgba(168, 168, 168, 0.9);
         .cc {
             height: 100%;
+            color: black;
+            font-weight: bold;
         }
     }
 }
@@ -34,7 +36,7 @@ body {
 #header {
     position: relative;
     width: 100%;
-    padding-top: 120px;
+    padding-top: 80px;
     
     #logo-container {
         position: absolute;
@@ -73,4 +75,82 @@ body {
             } 
         } 
     }
+}
+
+////////
+////////
+////////      About Q&A CSS
+////////
+////////
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5em
+}
+
+body{
+  background: #D7423C;
+  box-sizing: border-box;
+} */
+section{
+  margin-left: -8%;
+  margin-right: -8%;
+  padding: 3% 20%;
+  //background-color: rgba(199, 199, 199, 0.75);
+}
+.animate{
+  transition: all .3s;
+}
+
+input[name=question]{
+    display: none;
+}
+input[name=question] + label{
+    position: relative;
+    display: block;
+    padding: 20px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background: rgba(246, 246, 246, 1);
+    color: rgb(37, 37, 37);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+
+.response{
+    position: relative;
+    background: rgb(37, 37, 37);
+    color: rgb(37, 37, 37);
+    padding: 10px 20px;
+    -webkit-transform: translate3d(0,-40px, 0) rotate(-.5deg);
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    opacity: 0;
+    border-radius: 3px;
+}
+
+input[name=question]:checked + label{
+    background: #F6F6F6;
+    color: rgb(37, 37, 37);
+}
+input[name=question]:checked + label + .response{
+    overflow:auto;
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 20px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(0deg);
+    -webkit-filter: blur(0px);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.fixed-height{
+    height: 50px;
+    overflow: hidden;
+    opacity: 1 !important;
 }

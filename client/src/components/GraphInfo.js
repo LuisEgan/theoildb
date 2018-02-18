@@ -73,16 +73,8 @@ class GraphInfo extends Component {
   }
   
   render() {
-    const { info, graphName, graphType} = this.props;
+    const { info, graphName, graphType, description} = this.props;
     let { data } = this.state;
-
-//    const Dates = data.dates.map( d => {
-//      return d.dates;
-//    });
-//    const Values = data.longs.map( d => {
-//      return d.longs;
-//    });
-
     data = {
       labels: data.dates,
       datasets: [
@@ -103,18 +95,39 @@ class GraphInfo extends Component {
       ]
     }
 
+    let { options } = this.state;
+    options = {
+      scales: {
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'LABEL'
+          }
+        }]
+      },
+      title: {
+        display: true,
+        text: 'Custom Chart Title'
+      }     
+    }
+
     // data = this.dataObject(graphType);
 
     return (
       <div className="container graphInfo">
         <div className="row">
             <div className="col-sm-12 cc">
-                <Graph data={data} graphType={graphType}/>
-            </div>
-            
-            <div className="col-sm-12 cc">
                 {info}
             </div>
+
+            <div className="col-sm-12 cc">
+                <Graph data={data} graphType={graphType}/>
+            </div>
+
+            <div className="col-sm-12 cc">
+                {description}
+            </div>
+            
         </div>
       </div>
     );
