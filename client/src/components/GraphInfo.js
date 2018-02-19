@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Graph from './Graph';
+import SelectArg from './SelectArg';
 import { connect } from 'react-redux';
 import { getData } from '../actions';
 
@@ -66,52 +67,169 @@ class GraphInfo extends Component {
   }
 
   dataObject() {
-    // const { graphType } = this.props;
+    const { graphType } = this.props;
     let data = {};
-
     return data;
   }
   
   render() {
     const { info, graphName, graphType, description} = this.props;
     let { data } = this.state;
-    data = {
-      labels: data.dates,
-      datasets: [
-        {
-          label: data.labela,
-          data: data.var1,
-          backgroundColor: 'rgba(42, 145, 42, 0.2)',
-          borderColor: 'rgba(42, 145, 42, 1)',
-          borderWidth: 1
-        },
-        {
-          label: data.labelb,
-          data: data.var2,
-          backgroundColor: 'rgba(145,40, 40, 0.2)',
-          borderColor: 'rgba(145, 40, 40,1)',
-          borderWidth: 1
-        }  
-      ]
-    }
-
-    let { options } = this.state;
-    options = {
-      scales: {
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: 'LABEL'
+    const XLabel = data.XLabel;
+    const Y1Label = data.Y1Label;
+    const Y2Label = data.Y2Label;
+    const OnlySingleVar = data.OnlySingleVar;
+    const DoubleYAxis = data.DoubleYAxis;
+    const Searcheable = data.Searcheable;
+    let options;
+    if ( OnlySingleVar === "Yes") {
+    console.log('Single Dataset Case');  
+      data = {
+        labels: data.dates,
+        datasets: [
+          {
+            label: data.Var1Label,
+            data: data.var1,
+            backgroundColor: 'rgba(42, 145, 42, 0.2)',
+            borderColor: 'rgba(42, 145, 42, 1)',
+            borderWidth: 1
           }
-        }]
-      },
-      title: {
-        display: true,
-        text: 'Custom Chart Title'
-      }     
+        ]
+      };
+      options = {
+        scales: {
+          yAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString:  Y1Label
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }],
+          xAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString: XLabel
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }]
+        }  
+      } 
+    } else if ( OnlySingleVar === "No" && DoubleYAxis === 'No' ) {
+      console.log('Two Datasets Case');
+      data = {
+        labels: data.dates,
+        datasets: [
+          {
+            label: data.Var1Label,
+            data: data.var1,
+            backgroundColor: 'rgba(42, 145, 42, 0.2)',
+            borderColor: 'rgba(42, 145, 42, 1)',
+            borderWidth: 1
+          }, { 
+            label: data.Var2Label,
+            data: data.var2,
+            backgroundColor: 'rgba(145,40, 40, 0.2)',
+            borderColor: 'rgba(145, 40, 40,1)',
+            borderWidth: 1
+          }  
+        ]
+      };
+      options = {
+        scales: {
+          yAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString:  Y1Label
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }],
+          xAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString: XLabel
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }]
+        }  
+      }
+    } else if ( OnlySingleVar === "No" && DoubleYAxis === 'Yes' ) {
+      console.log('News Algo Case!!!');
+      data = {
+        labels: data.dates,
+        datasets: [
+          {
+            label: data.Var1Label,
+            data: data.var1,
+            yAxisID: 'A',
+            backgroundColor: 'rgba(42, 145, 42, 0.2)',
+            borderColor: 'rgba(42, 145, 42, 1)',
+            borderWidth: 1
+          }, { 
+            label: data.Var2Label,
+            data: data.var2,
+            yAxisID: 'B',
+            backgroundColor: 'rgba(145,40, 40, 0.2)',
+            borderColor: 'rgba(145, 40, 40,1)',
+            borderWidth: 1
+          }  
+        ]
+      };
+      options = {
+        scales: {
+          yAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            id: 'A',
+            type: 'linear',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString:  Y1Label
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }, {
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            id: 'B',
+            type: 'linear',
+            position: 'right',
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString:  Y2Label
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }],
+          xAxes: [{
+            borderColor: 'rgba(15, 15, 15, 1)',
+            gridLines: { color: 'rgba(15, 15, 15, 0.1)' },
+            scaleLabel: {
+              display: true,
+              fontColor: 'rgba(15, 15, 15, 1)',
+              labelString: XLabel
+            },
+            ticks: {fontColor: 'rgba(15, 15, 15, 1)'}
+          }]
+        }  
+      } 
     }
-
-    // data = this.dataObject(graphType);
 
     return (
       <div className="container graphInfo">
@@ -121,7 +239,12 @@ class GraphInfo extends Component {
             </div>
 
             <div className="col-sm-12 cc">
-                <Graph data={data} graphType={graphType}/>
+                <SelectArg/>
+            </div>
+
+            <div className="col-sm-12 cc">
+            
+                <Graph data={data} graphType={graphType} options={options}/>
             </div>
 
             <div className="col-sm-12 cc">

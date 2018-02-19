@@ -12,41 +12,133 @@ var Sector = require("../models/Sector");
 var Stocks = require("../models/Stocks");
 var WeeklyDrills = require("../models/WeeklyDrills");
 
+
 module.exports = app => {
     app.get('/api/get_data', (req, res) => {
         Data.find({}, (err, data) => {
             res.send(data);
         });
     });
+    app.get('/api/:col', (req, res) => {
+        const col = req.params.col.slice(9);
+        let model;
+        switch(col) {
+            case "curve":
+                model = Curve;
+                break;
+            case "demand":
+                model = Demand;
+                break;
+            case "margins":
+                model = Margins;
+                break;
+            case "monthlydrills":
+                model = MonthlyDrills;
+                break;
+            case "newsalgo":
+                model = NewsAlgo;
+                break;
+            case "ovx":
+                model = OVX;
+                break;
+            case "positions":
+                model = Positions;
+                break;
+            case "production":
+                model = Production;
+                break;
+            case "rates":
+                model = Rates;
+                break;
+            case "sector":
+                model = Sector;
+                break;
+            case "stocks":
+                model = Stocks;
+                break;
+            case "weeklydrills":
+                model = WeeklyDrills;
+                break;
+        }
+        let Args;
+        switch(col) {
+            case "curve":
+                Args = ['Curve'];
+                break;
+            case "demand":
+                Args = ['Worldwide Demand'];
+                break;
+            case "margins":
+                Args = ['WTI', 'Brent'];
+                break;
+            case "monthlydrills":
+                Args = ['Saudi_Arabia', 'Norway'];
+                break;
+            case "newsalgo":
+                Args = ['Algo', 'Price'];
+                break;
+            case "ovx":
+                Args = ['OVX'];
+                break;
+            case "positions":
+                Args = ['Longs', 'Shorts'];
+                break;
+            case "production":
+                Args = ['Venezuela', 'Mexico'];
+                break;
+            case "rates":
+                Args = ['WAfrica_USGC', 'Med_Med'];
+                break;
+            case "sector":
+                Args = ['S&P Energy Sector'];
+                break;
+            case "stocks":
+                Args = ['OECD Stocks'];
+                break;
+            case "weeklydrills":
+                Args = ['Canada', 'US'];
+                break;
+        }
+        console.log('~~~~~~~~');
+        console.log('Args[0]');
+        console.log(Args[0]);
+        console.log('Args[1]');
+        console.log(Args[1]);
+        console.log('~~~~~~~~');
+        
+        model.find({}, (err, modelInstances) => {
+            const var1 = [], var2 = [], dates = [];
 
-    app.get('/api/get_data_newsalgo', (req, res) => {
-        newsalgo.find({}, (err, PENE) => {
-            if(err){
-                console.log(err);
+            modelInstances.forEach( instance => {
+                if ( instance.Arg === Args[0] ) {
+                    if (typeof instance.Value === String) {
+                        var1.push(Number.Nan);
+                        dates.push(instance.Date);
+                    } else {
+                        var1.push(instance.Value);
+                        dates.push(instance.Date);
+                    }
+                } else if ( instance.Arg === Args[1]) {
+                    if (typeof instance.Value === String) {
+                        var2.push(Number.Nan);
+                    } else {
+                        var2.push(instance.Value);
+                    }
+                }
+            });
+            console.log(Args.length);
+            const labela = Args[0], labelb = Args[1];
+            const Data = {
+                labela,
+                labelb,
+                dates, 
+                var1,
+                var2
             }
-            else{
-                res.send(PENE);
-            }
+/*             if (Args.length == 1 ) {
+                delete Data.labelb;
+            } */
+            res.send(Data);
         });
-    });
-    
-// case "newsalgo"
-// model = NewsAlgo
-
-    // app.get('/api/get_data/:col', (req, res) => {
-    //     const collection = req.params.col;
-    //     let model;
-    //     switch(collection) {
-    //         case "newsalgo":
-    //             model = NewsAlgo;
-    //             break;
-    //         case "coll3":
-    //             model = Coll3;
-    //             break;
-    //     }
-
-    //     model.find({}, (err, PENE) => {
-    //         res.send(PENE);
-    //     });
-    // });
+    }); 
 }

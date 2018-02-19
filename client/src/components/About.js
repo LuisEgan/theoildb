@@ -18,7 +18,7 @@ class About extends Component {
         <label className="animate" htmlFor="q2">Q: Which Technology Stack do you use?</label>
         <p className="response animate">
         A: The data is gathered, organized, cleaned, and saved to a local and production database using python.
-        The website and the charts are made using React querying the data from a remote server.
+        The website and the charts are made using Node and React querying the data from a remote server.
         </p>
 
         <input className="animate" type="radio" name="question" id="q3"/>
@@ -56,12 +56,12 @@ class About extends Component {
         Currently works as a free-lancer and looking for new challenges. For contact: Linkedin contact goes here.
         <br/>
         <br/>
-        • Luis Egan: Back-end, Front-end Web Developer and Virtual Reality Programmer. Built all the back-end of the website including connections with the databases.
-        Currently works at . For contact: Linkedin contact goes here.
+        • Luis Egan: Full-stack Web Developer and Virtual Reality Programmer. Built all the back-end of the website including connections with the databases.
+        Currently works as Lead Front-end Developer at Advir. For contact: Linkedin contact goes here.
         <br/>
         <br/>
-        • Tomas Rodriguez: Computer Scientist and App Developer. Helped with the idea of the project and handles the server of the project.
-        Currently works at Microsoft. For contact: Linkedin contact goes here.
+        • Tomas Rodriguez: Computer Scientist and App Developer. Helped with the idea of the project and handles the server.
+        Currently works as a Developer at Microsoft. For contact: Linkedin contact goes here.
         </p>
 
         <input className="animate" type="radio" name="question" id="q7"/>
@@ -103,7 +103,7 @@ class About extends Component {
         <br/>
         LTC Address:
         <br/>
-        Eth Address:
+        ETH Address:
         <br/>
         Paypal:
         </p>

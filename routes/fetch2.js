@@ -12,69 +12,133 @@ var Sector = require("../models/Sector");
 var Stocks = require("../models/Stocks");
 var WeeklyDrills = require("../models/WeeklyDrills");
 
+
 module.exports = app => {
     app.get('/api/get_data', (req, res) => {
         Data.find({}, (err, data) => {
             res.send(data);
         });
     });
-
-
-
-    app.get('/api/get_data_demand', (req, res) => {
-        Demand.find({}, (err, Data) => {
-            if(err){
-                console.log(err);
-            }
-            else{
-                res.send(Data);
-            }
-        });
-    });
-
-    app.get('/api/get_data/:col', (req, res) => {
-        const collection = req.params.col;
+    app.get('/api/:col', (req, res) => {
+        const col = req.params.col.slice(9);
         let model;
-        switch(collection) {
-            case "Curve":
+        switch(col) {
+            case "curve":
                 model = Curve;
                 break;
-            case "Demand":
+            case "demand":
                 model = Demand;
                 break;
-            case "Margins":
+            case "margins":
                 model = Margins;
                 break;
-            case "MonthlyDrills":
+            case "monthlydrills":
                 model = MonthlyDrills;
                 break;
-            case "NewsAlgo":
+            case "newsalgo":
                 model = NewsAlgo;
                 break;
-            case "OVX":
+            case "ovx":
                 model = OVX;
                 break;
-            case "Positions":
+            case "positions":
                 model = Positions;
                 break;
-            case "Production":
+            case "production":
                 model = Production;
                 break;
-            case "Rates":
+            case "rates":
                 model = Rates;
                 break;
-            case "Sector":
+            case "sector":
                 model = Sector;
                 break;
-            case "Stocks":
+            case "stocks":
                 model = Stocks;
                 break;
-            case "WeeklyDrills":
+            case "weeklydrills":
                 model = WeeklyDrills;
-                break;    
+                break;
         }
-        model.find({}, (err, PENE) => {
-            res.send(PENE);
+        let Args;
+        switch(col) {
+            case "curve":
+                Args = ['Curve'];
+                break;
+            case "demand":
+                Args = ['Worldwide Demand'];
+                break;
+            case "margins":
+                Args = ['WTI', 'Brent'];
+                break;
+            case "monthlydrills":
+                Args = ['Saudi_Arabia', 'Norway'];
+                break;
+            case "newsalgo":
+                Args = ['Algo', 'Price'];
+                break;
+            case "ovx":
+                Args = ['OVX'];
+                break;
+            case "positions":
+                Args = ['Longs', 'Shorts'];
+                break;
+            case "production":
+                Args = ['Venezuela', 'Mexico'];
+                break;
+            case "rates":
+                Args = ['WAfrica_USGC', 'Med_Med'];
+                break;
+            case "sector":
+                Args = ['S&P Energy Sector'];
+                break;
+            case "stocks":
+                Args = ['OECD Stocks'];
+                break;
+            case "weeklydrills":
+                Args = ['Canada', 'US'];
+                break;
+        }
+        console.log('~~~~~~~~');
+        console.log('Args[0]');
+        console.log(Args[0]);
+        console.log('Args[1]');
+        console.log(Args[1]);
+        console.log('~~~~~~~~');
+        
+        model.find({}, (err, modelInstances) => {
+            const var1 = [], var2 = [], dates = [];
+
+            modelInstances.forEach( instance => {
+                if ( instance.Arg === Args[0] ) {
+                    if (typeof instance.Value === String) {
+                        var1.push(Number.Nan);
+                        dates.push(instance.Date);
+                    } else {
+                        var1.push(instance.Value);
+                        dates.push(instance.Date);
+                    }
+                } else if ( instance.Arg === Args[1]) {
+                    if (typeof instance.Value === String) {
+                        var2.push(Number.Nan);
+                    } else {
+                        var2.push(instance.Value);
+                    }
+                }
+            });
+            console.log(Args.length);
+            const labela = Args[0], labelb = Args[1];
+            const Data = {
+                labela,
+                labelb,
+                dates, 
+                var1,
+                var2
+            }
+/*             if (Args.length == 1 ) {
+                delete Data.labelb;
+            } */
+            res.send(Data);
         });
-    });
+    }); 
 }
