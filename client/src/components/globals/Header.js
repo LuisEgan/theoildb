@@ -12,8 +12,8 @@ class Header extends Component {
             <div className="row">
                 <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.NEWS}>News</NavLink></div>
                 <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.CURVE}>Curve</NavLink></div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.PRODUCTION}>Production</NavLink></div>
-                <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.DEMAND}>Demand</NavLink></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.DRILLS}>Drills</NavLink></div>
+                <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.SUPPLYDEMAND}>Supply-Demand</NavLink></div>
                 <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.MARGINS}>Margins</NavLink></div>
                 <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.FINANCIALS}>Financials</NavLink></div>
                 <div className="cc col-xs-6 col-sm-4 col-lg-3"><NavLink exact to={routeCodes.TRANSPORTATION}>Transportation</NavLink></div>

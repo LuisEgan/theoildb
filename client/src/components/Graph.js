@@ -4,8 +4,8 @@ import { Line, Doughnut, Pie, Polar, HorizontalBar } from "react-chartjs-2";
 class Chart extends React.Component {
   render() {
     const { data, graphType, options } = this.props;
-    console.log("data: ", data);
-    console.log("options: ", options);
+    //console.log("data: ", data);
+    //console.log("options: ", options);
 
     const isLine = graphType === "Line";
     const isDoughnut = graphType === "Doughnut";

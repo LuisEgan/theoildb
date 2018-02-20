@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GraphInfo from './GraphInfo';
 
-const CurveDescription = <div> <p> Units: Contract Price in US$ | Contracts Frequency: Monthly | Data Frequency: Daily | Source: CME </p></div>;
+const CurveDescription = <p> Units: Contract Price in US$ | Contracts Frequency: Monthly | Data Frequency: Daily | Source: CME </p>;
 
 class Curve extends Component {
   render() {

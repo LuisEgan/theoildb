@@ -83,14 +83,14 @@ class GraphInfo extends Component {
     const Searcheable = data.Searcheable;
     let options = {};
     if (OnlySingleVar === "Yes") {
-      console.log("Single Dataset Case");
+      //console.log("Single Dataset Case");
       data = {
         labels: data.dates,
         datasets: [
           {
             label: data.Var1Label,
             data: data.var1,
-            backgroundcolor: "rgba(42, 145, 42, 0.2)",
+            backgroundColor: "rgba(42, 145, 42, 0.2)",
             borderColor: "rgba(42, 145, 42, 1)",
             borderWidth: 1
           }
@@ -127,7 +127,7 @@ class GraphInfo extends Component {
         }
       };
     } else if (OnlySingleVar === "No" && DoubleYAxis === "No") {
-      console.log("Two Datasets Case");
+      //console.log("Two Datasets Case");
       data = {
         labels: data.dates,
         datasets: [
@@ -178,7 +178,7 @@ class GraphInfo extends Component {
         }
       };
     } else if (OnlySingleVar === "No" && DoubleYAxis === "Yes") {
-      console.log("News Algo Case!!!");
+      //console.log("News Algo Case!!!");
       data = {
         labels: data.dates,
         datasets: [
@@ -276,15 +276,15 @@ class GraphInfo extends Component {
     }
     return (
         <div className="container graphInfo">
-        <div className="row">
-            <div className="col-sm-12 cc">{info}</div>
+          <div className="row">
+              <div className="col-sm-12 cc">{info}</div>
 
-            <div className="col-sm-12 cc">
-            <Graph data={data} graphType={graphType} options={options} />
-            </div>
+              <div className="col-sm-12 cc">
+              <Graph data={data} graphType={graphType} options={options} />
+              </div>
 
-            <div className="col-sm-12 cc">{description}</div>
-        </div>
+              <div className="col-sm-12 cc">{description}</div>
+          </div>
         </div>
     );
   }

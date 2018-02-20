@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {jQuery as $} from 'jquery';
+import { Script } from 'vm';
 //import GraphInfo from './GraphInfo';
 
 class About extends Component {

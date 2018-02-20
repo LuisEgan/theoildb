@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import GraphInfo from './GraphInfo';
 
-const OVXDescription = <div> <p> Units: Index Points | Frequency: Daily | Source: CBOE </p></div>;
-const SectorDescription = <div> <p> Units: Index Points | Frequency: Daily | Source: S&amp;P Indices </p></div>;
-const PositionsDescription = <div> <p> Units: Total Positions | Frequency: Weekly | Source: CFTC </p></div>;
+const OVXDescription = <p> Units: Index Points | Frequency: Daily | Source: CBOE </p>;
+const SectorDescription = <p> Units: Index Points | Frequency: Daily | Source: S&amp;P Indices </p>;
+const PositionsDescription = <p> Units: Total Positions | Frequency: Weekly | Source: CFTC </p>;
 
 class Financials extends Component {
   render() {

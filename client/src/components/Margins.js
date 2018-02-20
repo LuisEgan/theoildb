@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GraphInfo from './GraphInfo';
 
-const MarginsDescription = <div> <p> Units: US$ per Barrel | Frequency: Monthly | Source: OPEC </p></div>;
+const MarginsDescription = <p> Units: Refinery Margins in US$ per Barrel | Frequency: Monthly | Source: OPEC </p>;
 
 class Margins extends Component {
   render() {

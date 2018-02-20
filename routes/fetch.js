@@ -86,7 +86,7 @@ module.exports = app => {
                 Info = {
                     Args: ['WTI', 'Brent'],
                     Labels: ['WTI', 'Brent'],
-                    AxisLabels: ['Date (Monthly)', 'Price'],
+                    AxisLabels: ['Date (Monthly)', '$ per Barrel'],
                     OnlySingleVar: 'No',
                     Searcheable: 'Yes',
                     DoubleYAxis: 'No',
@@ -94,7 +94,7 @@ module.exports = app => {
                 break;
             case "monthlydrills":
                 Info = {
-                    Args: ['Saudi_Arabia', 'Norway'],
+                    Args: ['Saudi Arabia', 'Norway'],
                     Labels: ['Saudi Arabia', 'Norway'],
                     AxisLabels: ['Date (Monthly)', '# of Drills'],
                     OnlySingleVar: 'No',
@@ -144,8 +144,8 @@ module.exports = app => {
                 break;
             case "rates":
                 Info = {
-                    Args: ['WAfrica_USGC', 'Med_Med'],
-                    Labels: ['West Africa to USGC', 'Medit. to Medit.'],
+                    Args: ['West Africa - US Gulf Coast', 'Caribbean - US East Coast'],
+                    Labels: ['West Africa - US Gulf Coast', 'Caribbean - US East Coast'],
                     AxisLabels: ['Date (Monthly)', '$ per Barrel'],
                     OnlySingleVar: 'No',
                     Searcheable: 'Yes',

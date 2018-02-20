@@ -5,7 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
-import {jQuery as $} from 'jquery';
+//import {jQuery as $} from 'jquery';
 
 // bootstrap
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
