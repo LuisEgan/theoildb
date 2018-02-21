@@ -291,11 +291,7 @@ class GraphInfo extends Component {
   render() {
     return (
       <div className="container graphInfo">
-        <LoadContent>
-          {
-            ({ renderGraph }) => renderGraph}
-          }
-        </LoadContent>
+        {this.renderGraph}
       </div>
     );
   }
