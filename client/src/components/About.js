@@ -1,22 +1,49 @@
 import React, { Component } from 'react';
-import {jQuery as $} from 'jquery';
 import { Script } from 'vm';
 //import GraphInfo from './GraphInfo';
 
+
 class About extends Component {
+
+  componentDidMount() {
+    console.log("HAAAAALP");
+    document.querySelectorAll('.response').forEach(function(item, i){
+      item.classList.remove("fixed-height");
+      var height = item.clientHeight;
+      item.setAttribute("data-height", height);
+      item.classList.add("fixed-height");
+    });
+  
+    document.querySelectorAll("input[name=question]").forEach(function(item, i) {
+      item.addEventListener("change" , function(){
+          document.querySelectorAll("p.response").forEach(function(element, j){
+              element.classList.add("fixed-height");
+          });
+      item.nextElementSibling.nextElementSibling.classList.remove("fixed-height");
+      });
+    });
+    
+    document.querySelectorAll('.response').forEach(function(item, i){
+      item.classList.remove("fixed-height");
+      var height = item.clientHeight;
+      item.setAttribute("data-height", height);
+      item.classList.add("fixed-height");
+    });
+  }
+
   render() {
     return (
       <section id='text'>
         <input className="animate" type="radio" name="question" id="q1"/>
         <label className="animate" htmlFor="q1">Q: What is TheOilDB?</label>
-        <p className="response animate">
+        <p className="response animate" id="r1">
         A: TheOilDB is a data science project created by Jesus Rangel, with the help of Luis Egan and Tomas Rodriguez, to gather in one place the main variables that affect the price of oil
         in the international markets.
         </p>
 
         <input className="animate" type="radio" name="question" id="q2"/>
         <label className="animate" htmlFor="q2">Q: Which Technology Stack do you use?</label>
-        <p className="response animate">
+        <p className="response animate" id="r2">
         A: The data is gathered, organized, cleaned, and saved to a local and production database using python.
         The website and the charts are made using Node and React querying the data from a remote server.
         </p>
@@ -87,7 +114,7 @@ class About extends Component {
         <input className="animate" type="radio" name="question" id="q8"/>
         <label className="animate" htmlFor="q8">Disclaimer</label>
         <p className="response animate">
-        The creators of this project do not currently own or trade any financial securties related to energy commodities, including but not limited to: stocks, bonds, funds or financial derivatives.
+        The creators of this project do not currently own or trade any financial securities related to energy commodities, including but not limited to: stocks, bonds, funds or financial derivatives.
         <br/>
         They also do not work nor are clients or offer any kind of financial advise to companies or individuals involved in the previously mentioned activities.
         <br/>
