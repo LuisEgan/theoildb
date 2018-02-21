@@ -14,18 +14,14 @@ var WeeklyDrills = require("../models/WeeklyDrills");
 
 
 module.exports = app => {
-     app.get('/api/get_data', (req, res) => {
+    app.get('/api/get_data', (req, res) => {
         Data.find({}, (err, data) => {
             res.send(data);
         });
-    }); 
+    });
 
 
-    app.post('/api/:col', (req, res) => {
-        const country = req.body.country;
-        console.log("Here");
-        console.log(country);
-        console.log("Here");
+    app.get('/api/:col', (req, res) => {
         const col = req.params.col.slice(9);
         let model;
         switch(col) {
@@ -66,6 +62,9 @@ module.exports = app => {
                 model = WeeklyDrills;
                 break;
         }
+        console.log("Here");
+        console.log(req.body.fromChild);
+        console.log("Here");
         let Info;
         switch(col) {
             case "curve":
@@ -90,8 +89,8 @@ module.exports = app => {
                 break;
             case "margins":
                 Info = {
-                    Args: [country, 'Brent'],
-                    Labels: [country, 'Brent'],
+                    Args: ['WTI', 'Brent'],
+                    Labels: ['WTI', 'Brent'],
                     AxisLabels: ['Date (Monthly)', '$ per Barrel'],
                     OnlySingleVar: 'No',
                     Searcheable: 'Yes',
@@ -190,7 +189,7 @@ module.exports = app => {
                 break;
         }
 
-        model.find({Arg: country}, (err, modelInstances) => {
+        model.find({}, (err, modelInstances) => {
             const var1 = [], var2 = [], dates = [];
 
             modelInstances.forEach( instance => {

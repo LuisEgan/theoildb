@@ -8,13 +8,19 @@ import { getData } from "../actions";
 class GraphInfo extends Component {
   constructor(props) {
     super(props);
-
+    this.handleData = this.handleData.bind(this);
     this.state = {
+      fromChild: "WTI",
       data: []
     };
   }
 
-  componentWillMount() {
+  handleData(result) {
+    this.setState({
+      fromChild: result
+    });
+  }
+  ComponentWillReceiveProps() {
     const { graphName } = this.props;
     let route;
     switch (graphName) {
@@ -58,21 +64,25 @@ class GraphInfo extends Component {
         route = "/api/get_data_stocks";
         break;
     }
-
-    axios.get(route).then(
+    axios.post(route, {
+      country: this.state.fromChild
+    })
+    .then(
       function(Data) {
         this.setState({ data: Data.data });
       }.bind(this)
     );
   }
 
+  // componentWillMount() {}
+ 
   dataObject() {
     const { graphType } = this.props;
     let data = {};
     return data;
   }
 
-  render() {
+  renderGraph() {
     const { info, graphName, graphType, description } = this.props;
     let { data } = this.state;
     const XLabel = data.XLabel;
@@ -246,36 +256,26 @@ class GraphInfo extends Component {
       };
     }
 
-    // console.log("XLabel: ", XLabel);
-    // console.log("Y1Label: ", Y1Label);
-    // console.log("Y2Label: ", Y2Label);
-    // console.log("OnlySingleVar: ", OnlySingleVar);
-    // console.log("DoubleYAxis: ", DoubleYAxis);
-    // console.log("Searcheable: ", Searcheable);
-    // console.log("options: ", options);
-    // console.log("data: ", data);
-
     if (Searcheable === 'Yes') {
         return (
-            <div className="container graphInfo">
+          //<div className="container graphInfo">
             <div className="row">
                 <div className="col-sm-12 cc">{info}</div>
 
                 <div className="col-sm-12 cc">
-                <SelectArg />
+                <SelectArg handlerFromParent={this.handleData}/>
                 </div>
 
                 <div className="col-sm-12 cc">
                 <Graph data={data} graphType={graphType} options={options} />
                 </div>
-
+                <h5>Received by parent:<br />{this.state.fromChild}</h5>
                 <div className="col-sm-12 cc">{description}</div>
             </div>
-            </div>
+            //</div>
         );
     }
     return (
-        <div className="container graphInfo">
           <div className="row">
               <div className="col-sm-12 cc">{info}</div>
 
@@ -285,7 +285,18 @@ class GraphInfo extends Component {
 
               <div className="col-sm-12 cc">{description}</div>
           </div>
-        </div>
+    );
+  } 
+
+  render() {
+    return (
+      <div className="container graphInfo">
+        <LoadContent>
+          {
+            ({ renderGraph }) => renderGraph}
+          }
+        </LoadContent>
+      </div>
     );
   }
 }

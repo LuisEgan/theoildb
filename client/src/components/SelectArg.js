@@ -4,7 +4,7 @@ import * as React from 'react';
 class SelectArg extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {value: 'Venezuela'};
+      this.state = {value: 'WTI'};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,8 +15,9 @@ class SelectArg extends React.Component {
     }
   
     handleSubmit(event) {
-      alert('Arg: ' + this.state.value);
+      //alert('Arg: ' + this.state.value);
       event.preventDefault();
+      this.props.handlerFromParent(this.state.value);
     }
   
     render() {
@@ -25,8 +26,8 @@ class SelectArg extends React.Component {
           <label>
             Select Country:
             <select value={this.state.value} onChange={this.handleChange}>
-              <option value="Venezuela">Venezuela</option>
-              <option value="Iraq">Iraq</option>
+              <option value="WTI">WTI</option>
+              <option value="Minas">Minas</option>
             </select>
           </label>
           <input type="submit" value="Submit" />
