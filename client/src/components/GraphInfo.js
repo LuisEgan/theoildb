@@ -59,11 +59,15 @@ class GraphInfo extends Component {
         break;
     }
 
-    axios.get(route).then(
-      function(Data) {
-        this.setState({ data: Data.data });
-      }.bind(this)
-    );
+    axios
+      .post(route, {
+        ayy: "lmao"
+      })
+      .then(
+        function(Data) {
+          this.setState({ data: Data.data });
+        }.bind(this)
+      );
   }
 
   dataObject() {
@@ -255,37 +259,37 @@ class GraphInfo extends Component {
     // console.log("options: ", options);
     // console.log("data: ", data);
 
-    if (Searcheable === 'Yes') {
-        return (
-            <div className="container graphInfo">
-            <div className="row">
-                <div className="col-sm-12 cc">{info}</div>
-
-                <div className="col-sm-12 cc">
-                <SelectArg />
-                </div>
-
-                <div className="col-sm-12 cc">
-                <Graph data={data} graphType={graphType} options={options} />
-                </div>
-
-                <div className="col-sm-12 cc">{description}</div>
-            </div>
-            </div>
-        );
-    }
-    return (
+    if (Searcheable === "Yes") {
+      return (
         <div className="container graphInfo">
           <div className="row">
-              <div className="col-sm-12 cc">{info}</div>
+            <div className="col-sm-12 cc">{info}</div>
 
-              <div className="col-sm-12 cc">
+            <div className="col-sm-12 cc">
+              <SelectArg />
+            </div>
+
+            <div className="col-sm-12 cc">
               <Graph data={data} graphType={graphType} options={options} />
-              </div>
+            </div>
 
-              <div className="col-sm-12 cc">{description}</div>
+            <div className="col-sm-12 cc">{description}</div>
           </div>
         </div>
+      );
+    }
+    return (
+      <div className="container graphInfo">
+        <div className="row">
+          <div className="col-sm-12 cc">{info}</div>
+
+          <div className="col-sm-12 cc">
+            <Graph data={data} graphType={graphType} options={options} />
+          </div>
+
+          <div className="col-sm-12 cc">{description}</div>
+        </div>
+      </div>
     );
   }
 }
