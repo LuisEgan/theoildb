@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GraphInfo from './GraphInfo';
+import GraphBlock from './GraphBlock';
 
 const OVXDescription = <p> Units: Index Points | Frequency: Daily | Source: CBOE </p>;
 const SectorDescription = <p> Units: Index Points | Frequency: Daily | Source: S&amp;P Indices </p>;
@@ -10,9 +10,9 @@ class Financials extends Component {
     return (
         <div id="financials">
             {/* <h1>Financials</h1> */}
-            <GraphInfo info="Oil Volatility Index" graphName="OVX" graphType="Line" description={OVXDescription}/>
-            <GraphInfo info="Standard and Poors Energy Sector Index" graphName="Sector" graphType="Line" description={SectorDescription}/>
-            <GraphInfo info="CFTC Positions" graphName="Positions" graphType="Line" description={PositionsDescription}/>
+            <GraphBlock Searchable="No" info="Oil Volatility Index" graphName="OVX" graphType="Line" description={OVXDescription}/>
+            <GraphBlock Searchable="No" info="Standard and Poors Energy Sector Index" graphName="Sector" graphType="Line" description={SectorDescription}/>
+            <GraphBlock Searchable="No" info="CFTC Positions" graphName="Positions" graphType="Line" description={PositionsDescription}/>
         </div>
     );
   }

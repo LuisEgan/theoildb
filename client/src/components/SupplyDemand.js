@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GraphInfo from './GraphInfo';
+import GraphBlock from './GraphBlock';
 
 const DemandDescription = <p> Units: Millions of Barrels per Day | Frequency: Quarterly | Source: OPEC </p>;
 const ProductionDescription = <p> Units: Barrels per Day | Frequency: Monthly | Source: OPEC &amp; IEA </p>;
@@ -11,9 +11,9 @@ class SupplyDemand extends Component {
     return (
         <div id="demand">
             {/* <h1>Demand</h1> */}
-            <GraphInfo info="Worldwide Demand" graphName="Demand" graphType="Line" description={DemandDescription}/>
-            <GraphInfo info="OECD Stocks" graphName="Stocks" graphType="Line" description={StocksDescription}/>
-            <GraphInfo info="Oil Production in Selected Countries" graphName="Production" graphType="Line" description={ProductionDescription}/>
+            <GraphBlock Searchable="No" info="Worldwide Demand" graphName="Demand" graphType="Line" description={DemandDescription}/>
+            <GraphBlock Searchable="No" info="OECD Stocks" graphName="Stocks" graphType="Line" description={StocksDescription}/>
+            <GraphBlock Searchable="Yes" info="Oil Production in Selected Countries" graphName="Production" graphType="Line" description={ProductionDescription}/>
         </div>
     );
   }

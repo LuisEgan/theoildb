@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GraphInfo from './GraphInfo';
+import GraphBlock from './GraphBlock';
 
 const RatesDescription = <p> Units: US$ per Barrel | Frequency: Monthly | Source: OPEC </p>;
 
@@ -8,7 +8,7 @@ class Transportation extends Component {
     return (
         <div id="transportation">
             {/* <h1>Transportation</h1> */}
-            <GraphInfo info="Freight Rates" graphName="Rates" graphType="Line" description={RatesDescription}/>
+            <GraphBlock Searchable="Yes" info="Freight Rates" graphName="Rates" graphType="Line" description={RatesDescription}/>
         </div>
     );
   }

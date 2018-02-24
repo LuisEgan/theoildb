@@ -16,12 +16,10 @@ body {
     margin: 12% 5%;
 }
 
-.graphInfo {
+.graphBlock {
     height: 100%;
     width: 100%;
-    color: white;
     border: solid black;
-
     .row {
         height: 100%;
         background-color: rgba(168, 168, 168, 0.9);
@@ -47,6 +45,31 @@ body {
         }
     }
 }
+
+
+#Row {
+    height: 100%;
+    background-color: rgba(168, 168, 168, 0.9);
+    .cc {
+        height: 100%;
+        color: black;
+        font-weight: bold;
+    }
+    .GraphInfo {
+        //height: 300px;
+        //width: 200px;
+        background-image: url(../images/logo1t.png);
+        background-color: transparent;
+        background-size: 12%;
+        background-repeat: no-repeat;
+        background-position: 14% 14%;
+        div {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
 
 #header {
     position: relative;

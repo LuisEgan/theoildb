@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GraphInfo from './GraphInfo';
+import GraphBlock from './GraphBlock';
 
 const NewsDescription = <div> <p> Oil Price - Units: US$ per Barrel (CL1) | Frequency: Daily | Source: CME </p>
 <p> NewsAlgorithm - Units: % of Positive News | Frequency: Daily | Source: TheOilDB </p>
@@ -10,7 +10,7 @@ class News extends Component {
     return (
         <div id="news">
             {/* <h1>News</h1> */}
-            <GraphInfo info="Oil Price vs NewsAlgorithm" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
+            <GraphBlock Searchable="No" info="Oil Price vs NewsAlgorithm" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
         </div>
     );
   }
