@@ -79,7 +79,7 @@ class About extends Component {
         <label className="animate" htmlFor="q6"> About the creators of TheOilDB</label>
         <p className="response animate">
         • Jesus Rangel: Economist and Data Scientist, creator of TheOilDB. Everything related to the data and algorithms side of the project.
-        Currently works as a free-lancer and looking for new challenges. For contact: <a href="www.linkedin.com/in/jesus-rangel-477668a1">Linkedin Profile</a>
+        Currently works as a free-lancer and looking for new challenges. For contact: <a href="https://www.linkedin.com/in/jesus-rangel-477668a1">Linkedin Profile</a>
         <br/>
         <br/>
         • Luis Egan: Full-stack Web Developer and Virtual Reality Programmer. Built all the back-end of the website including connections with the databases.
