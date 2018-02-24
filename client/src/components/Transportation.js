@@ -7,7 +7,7 @@ class Transportation extends Component {
   render() {
     return (
         <div id="transportation">
-            {/* <h1>Transportation</h1> */}
+            <h1>Transportation</h1>
             <GraphBlock Searchable="Yes" info="Freight Rates" graphName="Rates" graphType="Line" description={RatesDescription}/>
         </div>
     );

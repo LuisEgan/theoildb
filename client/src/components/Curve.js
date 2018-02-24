@@ -7,8 +7,8 @@ class Curve extends Component {
   render() {
     return (
         <div id="curve">
-           {/* <h1>Curve</h1> */} 
-            <GraphBlock Searchable="No" info="WTI Contracts Curve" graphName="Curve" graphType="Line" description={CurveDescription}/>
+          <h1>Oil Contracts Curve</h1> 
+          <GraphBlock Searchable="No" info="WTI Contracts Curve" graphName="Curve" graphType="Line" description={CurveDescription}/>
         </div>
     );
   }

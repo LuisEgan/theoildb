@@ -7,7 +7,7 @@ class Margins extends Component {
   render() {
     return (
         <div id="margins">
-            {/* <h1>Margins</h1> */}
+            <h1>Margins</h1>
             <GraphBlock Searchable="Yes" info="Refinery Margins" graphName="Margins" graphType="Line" description={MarginsDescription}/>
         </div>
     );

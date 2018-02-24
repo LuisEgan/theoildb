@@ -20,6 +20,7 @@ body {
     height: 100%;
     width: 100%;
     border: solid black;
+    margin-bottom: 1%;
     .row {
         height: 100%;
         background-color: rgba(168, 168, 168, 0.9);
@@ -38,7 +39,7 @@ body {
                         background-color: transparent;
                         background-size: 12%;
                         background-repeat: no-repeat;
-                        background-position: 14% 14%; 
+                        background-position: 15% 15%; 
                     }
                 }
             }
@@ -46,26 +47,50 @@ body {
     }
 }
 
+#NewsText {
+    text-align: center;
+}
 
-#Row {
-    height: 100%;
-    background-color: rgba(168, 168, 168, 0.9);
-    .cc {
-        height: 100%;
-        color: black;
-        font-weight: bold;
+h1 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    font-size:calc(1vw + 1em);
+    //cursor: pointer;
+    background: rgb(214, 214, 214);
+    color: rgb(37, 37, 37);
+    z-index: 2;
+    box-shadow: 1 1 15px rgba(0,0,0,.1);
+    border-radius: 50px;
+    margin-bottom: 1%;
+    margin-bottom: 4%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.SelectArg {
+    margin-top: 3px;
+    select {
+        margin-left: 5px;
+        margin-right: 5px;
     }
-    .GraphInfo {
-        //height: 300px;
-        //width: 200px;
-        background-image: url(../images/logo1t.png);
-        background-color: transparent;
-        background-size: 12%;
-        background-repeat: no-repeat;
-        background-position: 14% 14%;
-        div {
-            height: 100%;
-            width: 100%;
+    input {
+        background-color: white;
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+
+        &:hover {
+            background-color: black;
+            color: white;
+            cursor: pointer;
         }
     }
 }

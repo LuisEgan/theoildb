@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class About extends Component {
 
   componentDidMount() {
-    console.log("HAAAAALP");
     document.querySelectorAll('.response').forEach(function(item, i){
       item.classList.remove("fixed-height");
       var height = item.clientHeight;
@@ -33,6 +32,7 @@ class About extends Component {
   render() {
     return (
       <section id='text'>
+        <h1> About </h1>
         <input className="animate" type="radio" name="question" id="q1"/>
         <label className="animate" htmlFor="q1">Q: What is TheOilDB?</label>
         <p className="response animate" id="r1">
@@ -79,15 +79,11 @@ class About extends Component {
         <label className="animate" htmlFor="q6"> About the creators of TheOilDB</label>
         <p className="response animate">
         • Jesus Rangel: Economist and Data Scientist, creator of TheOilDB. Everything related to the data and algorithms side of the project.
-        Currently works as a free-lancer and looking for new challenges. For contact: Linkedin contact goes here.
+        Currently works as a free-lancer and looking for new challenges. For contact: <a href="www.linkedin.com/in/jesus-rangel-477668a1">Linkedin Profile</a>
         <br/>
         <br/>
         • Luis Egan: Full-stack Web Developer and Virtual Reality Programmer. Built all the back-end of the website including connections with the databases.
-        Currently works as Lead Front-end Developer at Advir. For contact: Linkedin contact goes here.
-        <br/>
-        <br/>
-        • Tomas Rodriguez: Computer Scientist and App Developer. Helped with the idea of the project and handles the server.
-        Currently works as a Developer at Microsoft. For contact: Linkedin contact goes here.
+        Currently works as Lead Front-end Developer at Advir. For contact: <a href="https://www.linkedin.com/in/luis-egan-565401127/">Linkedin Profile</a>
         </p>
 
         <input className="animate" type="radio" name="question" id="q7"/>
@@ -99,13 +95,13 @@ class About extends Component {
         <br/>
         • A prediction section! Home-made machine learning and neural network models that will use all of our data to predict the price of oil and publish the results online.
         <br/>
-        • More financial indexes.
+        • A choropleth map showing where are the news and healines coming from everyday.
         <br/>
         • New data sources including the US Energy Information Administration.
         <br/>
         • More news sources for our Index.
         <br/>
-        • A choropleth map showing where are the news and healines coming from everyday.
+        • More financial indexes.
         <br/>
         • And many new charts to make data visualization better.
         </p>
@@ -127,13 +123,14 @@ class About extends Component {
         <p className="response animate">
         Your donation can make the difference, all amounts are greatly appreciated!
         <br/>
-        BTC Address: 1P26GRXhHBNyyU25DQzBTGHQJqpCG6e1dW
         <br/>
-        LTC Address: LiEoe3hfTChKu5e2GoTJS1xB8bmvgFgMCU
+        • BTC Address: 1P26GRXhHBNyyU25DQzBTGHQJqpCG6e1dW
         <br/>
-        BCH Address: qrcc09phx9veqhu44una80j8fca98mq2j53yn4xxv0
+        • LTC Address: LiEoe3hfTChKu5e2GoTJS1xB8bmvgFgMCU
         <br/>
-        ETH Address: 0x6e48bc41d68dA4cB249F9336Bf32f0f5D724F571
+        • BCH Address: qrcc09phx9veqhu44una80j8fca98mq2j53yn4xxv0
+        <br/>
+        • ETH Address: 0x6e48bc41d68dA4cB249F9336Bf32f0f5D724F571
         </p>
       </section>
     );

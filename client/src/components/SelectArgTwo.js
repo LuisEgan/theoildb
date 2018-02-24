@@ -184,7 +184,7 @@ class SelectArgTwo extends React.Component {
             <label>
               Select Route (Red): 
               <select value={this.state.value} onChange={this.handleChange}>
-                <option value="">(Rate)</option>
+                <option value="">(Route)</option>
                 <option value="Caribbean - US East Coast">Carib - US EC</option>
                 <option value="Mediterranean - Mediterranean">Med - Med</option>
                 <option value="Middle East - East">MidEast - East</option>

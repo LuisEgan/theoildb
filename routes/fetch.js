@@ -24,11 +24,11 @@ module.exports = app => {
     app.post('/api/:col', (req, res) => {
         var QueryOne = req.body.QueryOne;
         var QueryTwo = req.body.QueryTwo;
-        console.log("COUNTRY");
-        console.log(QueryOne);
-        console.log(QueryTwo);
-        console.log("COUNTRY");
-        console.log("");
+        //console.log("COUNTRY");
+        //console.log(QueryOne);
+        //console.log(QueryTwo);
+        //console.log("COUNTRY");
+        //console.log("");
         const col = req.params.col.slice(9);
         let model;
         switch(col) {
@@ -204,10 +204,10 @@ module.exports = app => {
                 };
                 break;
         };
-        console.log("COL");
-        console.log(col);
-        console.log("COL");
-        console.log("");
+        //console.log("COL");
+        //console.log(col);
+        //console.log("COL");
+        //console.log("");
         if ( col === 'margins' || col === "monthlydrills" || col === "production" || col === "rates" ) {
             model.find({ $or: [
                 {Arg: Info.Args[0]}, {Arg: Info.Args[1]}

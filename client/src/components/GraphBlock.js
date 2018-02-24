@@ -34,8 +34,8 @@ class GraphBlock extends Component {
     const { description } = this.props;
     if (Searchable === 'Yes') {
         return (
-          //<div className="container graphInfo">
-            <div className="row" id="Row">
+          <div className="container graphBlock">
+            <div className="row">
                 <div className="col-sm-12 cc Info">{info}</div>
 
                 <div className="col-sm-12 cc SelectArg">
@@ -52,18 +52,20 @@ class GraphBlock extends Component {
                   {/* <h5>Received in BlockTwo:<br />{this.state.fromChildTwo}</h5> */}
                 <div className="col-sm-12 cc Description">{description}</div>
             </div>
-            //</div>
+          </div>
         );
     }
     return (
-          <div className="row" id="Row">
-              <div className="col-sm-12 cc Info">{info}</div>
+      <div className="container graphBlock">
+        <div className="row">
+          <div className="col-sm-12 cc Info">{info}</div>
 
-              <div className="col-sm-12 cc GraphInfo">
-                <GraphInfo graphName={graphName} graphType={graphType} Argument={this.state.fromChild}/>
-              </div>
-              <div className="col-sm-12 cc Description">{description}</div>
+          <div className="col-sm-12 cc GraphInfo">
+            <GraphInfo graphName={graphName} graphType={graphType} Argument={this.state.fromChild}/>
           </div>
+          <div className="col-sm-12 cc Description">{description}</div>
+        </div>
+      </div>
     );
   } 
 }

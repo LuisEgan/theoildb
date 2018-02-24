@@ -23,7 +23,8 @@ body {
 .graphBlock {
   height: 100%;
   width: 100%;
-  border: solid black; }
+  border: solid black;
+  margin-bottom: 1%; }
   .graphBlock .row {
     height: 100%;
     background-color: rgba(168, 168, 168, 0.9); }
@@ -42,24 +43,52 @@ body {
             background-color: transparent;
             background-size: 12%;
             background-repeat: no-repeat;
-            background-position: 14% 14%; }
+            background-position: 15% 15%; }
 
-#Row {
-  height: 100%;
-  background-color: rgba(168, 168, 168, 0.9); }
-  #Row .cc {
-    height: 100%;
+#NewsText {
+  text-align: center; }
+
+h1 {
+  text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  display: block;
+  padding: 15px 15px;
+  font-size: calc(1vw + 1em);
+  background: #d6d6d6;
+  color: #252525;
+  z-index: 2;
+  -webkit-box-shadow: 1 1 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 1 1 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  margin-bottom: 1%;
+  margin-bottom: 4%;
+  margin-right: 10%;
+  margin-left: 10%; }
+
+.SelectArg {
+  margin-top: 3px; }
+  .SelectArg select {
+    margin-left: 5px;
+    margin-right: 5px; }
+  .SelectArg input {
+    background-color: white;
     color: black;
-    font-weight: bold; }
-  #Row .GraphInfo {
-    background-image: url(../images/logo1t.png);
-    background-color: transparent;
-    background-size: 12%;
-    background-repeat: no-repeat;
-    background-position: 14% 14%; }
-    #Row .GraphInfo div {
-      height: 100%;
-      width: 100%; }
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none; }
+    .SelectArg input:hover {
+      background-color: black;
+      color: white;
+      cursor: pointer; }
 
 #header {
   position: relative;

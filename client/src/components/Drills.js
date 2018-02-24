@@ -9,7 +9,7 @@ class Drills extends Component {
   render() {
     return (
         <div id="production">
-            {/* <h1>Production</h1> */}
+            <h1>Drills</h1>
             <GraphBlock Searchable="No" info="Drills in US and Canada" graphName="WeeklyDrills" graphType="Line" description={WDDescription}/>
             <GraphBlock Searchable="Yes" info="Drills in Selected Countries" graphName="MonthlyDrills" graphType="Line" description={MDDescription}/>
         </div>

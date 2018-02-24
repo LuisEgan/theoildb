@@ -9,7 +9,8 @@ class Home extends Component {
   render() {
     return (
         <div id="home">
-            <GraphBlock Searcheable="No" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
+        <h1>TheOilDB</h1>
+          <GraphBlock Searcheable="No" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
         </div>
     );
   }
