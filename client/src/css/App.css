@@ -20,30 +20,46 @@ body {
 .App {
   margin: 12% 5%; }
 
-.graphInfo {
+.graphBlock {
   height: 100%;
   width: 100%;
-  color: white;
   border: solid black; }
-  .graphInfo .row {
+  .graphBlock .row {
     height: 100%;
     background-color: rgba(168, 168, 168, 0.9); }
-    .graphInfo .row .cc {
+    .graphBlock .row .cc {
       height: 100%;
       color: black;
       font-weight: bold; }
-      .graphInfo .row .cc div {
+      .graphBlock .row .cc div {
         height: 100%;
         width: 100%; }
-        .graphInfo .row .cc div div {
+        .graphBlock .row .cc div div {
           height: 100%;
           width: 100%; }
-          .graphInfo .row .cc div div canvas {
+          .graphBlock .row .cc div div canvas {
             background-image: url(../images/logo1t.png);
             background-color: transparent;
             background-size: 12%;
             background-repeat: no-repeat;
             background-position: 14% 14%; }
+
+#Row {
+  height: 100%;
+  background-color: rgba(168, 168, 168, 0.9); }
+  #Row .cc {
+    height: 100%;
+    color: black;
+    font-weight: bold; }
+  #Row .GraphInfo {
+    background-image: url(../images/logo1t.png);
+    background-color: transparent;
+    background-size: 12%;
+    background-repeat: no-repeat;
+    background-position: 14% 14%; }
+    #Row .GraphInfo div {
+      height: 100%;
+      width: 100%; }
 
 #header {
   position: relative;

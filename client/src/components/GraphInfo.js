@@ -1,26 +1,89 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Graph from "./Graph";
-import SelectArg from "./SelectArg";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 
 class GraphInfo extends Component {
   constructor(props) {
     super(props);
-    this.handleData = this.handleData.bind(this);
     this.state = {
-      fromChild: "WTI",
+      DataChanges: -1.0,
+      PropsChanges: 0.0,
       data: []
+      //Update = "First",
     };
   }
 
-  handleData(result) {
-    this.setState({
-      fromChild: result
-    });
+  componentWillReceiveProps(nextProps, nextState){
+    this.setState({PropsChanges: this.state.PropsChanges + 1.0});
   }
-  ComponentWillReceiveProps() {
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log("Should State DataChanges: " + this.state.DataChanges + " // " + nextState.DataChanges);
+    console.log("Should State PropsChanges: " + this.state.PropsChanges + " // " + nextState.PropsChanges);
+    if (this.state.DataChanges !== nextState.DataChanges || this.state.PropsChanges !== nextState.PropsChanges) {
+      return nextState.DataChanges - nextState.PropsChanges < 1.0
+    } 
+    return false;
+  }
+
+  componentWillMount() {
+    const { graphName } = this.props;
+    let route;
+    switch (graphName) {
+      case "Curve":
+        route = "/api/get_data_curve";
+        break;
+      case "Demand":
+        route = "/api/get_data_demand";
+        break;
+      case "Margins":
+        route = "/api/get_data_margins";
+        break;
+      case "MonthlyDrills":
+        route = "/api/get_data_monthlydrills";
+        break;
+      case "NewsAlgo":
+        route = "/api/get_data_newsalgo";
+        break;
+      case "OVX":
+        route = "/api/get_data_ovx";
+        break;
+      case "Positions":
+        route = "/api/get_data_positions";
+        break;
+      case "Production":
+        route = "/api/get_data_production";
+        break;
+      case "Rates":
+        route = "/api/get_data_rates";
+        break;
+      case "Sector":
+        route = "/api/get_data_sector";
+        break;
+      case "Stocks":
+        route = "/api/get_data_stocks";
+        break;
+      case "WeeklyDrills":
+        route = "/api/get_data_weeklydrills";
+        break;
+      default:
+        route = "/api/get_data_stocks";
+        break;
+    }
+  }
+ 
+  dataObject() {
+    const { graphType } = this.props;
+    let data = {};
+    return data;
+  }
+
+  render() {
+    console.log("Axios: " + this.props.ArgumentOne + " // " + this.props.ArgumentTwo);
+    const { ArgumentOne } = this.props;
+    const { ArgumentTwo } = this.props;
     const { graphName } = this.props;
     let route;
     switch (graphName) {
@@ -65,32 +128,24 @@ class GraphInfo extends Component {
         break;
     }
     axios.post(route, {
-      country: this.state.fromChild
+      QueryOne: this.props.ArgumentOne,
+      QueryTwo: this.props.ArgumentTwo,
     })
     .then(
       function(Data) {
-        this.setState({ data: Data.data });
+        this.setState({
+          data: Data.data,
+          DataChanges: this.state.DataChanges + 0.5,
+        });
       }.bind(this)
     );
-  }
-
-  // componentWillMount() {}
- 
-  dataObject() {
     const { graphType } = this.props;
-    let data = {};
-    return data;
-  }
-
-  renderGraph() {
-    const { info, graphName, graphType, description } = this.props;
-    let { data } = this.state;
+    let { data } =  this.state;
     const XLabel = data.XLabel;
     const Y1Label = data.Y1Label;
     const Y2Label = data.Y2Label;
     const OnlySingleVar = data.OnlySingleVar;
     const DoubleYAxis = data.DoubleYAxis;
-    const Searcheable = data.Searcheable;
     let options = {};
     if (OnlySingleVar === "Yes") {
       //console.log("Single Dataset Case");
@@ -255,46 +310,14 @@ class GraphInfo extends Component {
         }
       };
     }
-
-    if (Searcheable === 'Yes') {
-        return (
-          //<div className="container graphInfo">
-            <div className="row">
-                <div className="col-sm-12 cc">{info}</div>
-
-                <div className="col-sm-12 cc">
-                <SelectArg handlerFromParent={this.handleData}/>
-                </div>
-
-                <div className="col-sm-12 cc">
-                <Graph data={data} graphType={graphType} options={options} />
-                </div>
-                <h5>Received by parent:<br />{this.state.fromChild}</h5>
-                <div className="col-sm-12 cc">{description}</div>
-            </div>
-            //</div>
-        );
-    }
     return (
-          <div className="row">
-              <div className="col-sm-12 cc">{info}</div>
-
-              <div className="col-sm-12 cc">
-              <Graph data={data} graphType={graphType} options={options} />
-              </div>
-
-              <div className="col-sm-12 cc">{description}</div>
-          </div>
+        <div className="col-sm-12 cc">
+          <Graph data={data} graphType={graphType} options={options} />
+          {/* <h5>Received by InfoOne:<br />{this.props.ArgumentOne}</h5> */}
+          {/* <h5>Received by InfoTwo:<br />{this.props.ArgumentTwo}</h5> */}
+        </div>
     );
   } 
-
-  render() {
-    return (
-      <div className="container graphInfo">
-        {this.renderGraph}
-      </div>
-    );
-  }
 }
 
 const mapStateToProps = state => state;
