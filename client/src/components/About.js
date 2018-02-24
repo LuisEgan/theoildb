@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Script } from 'vm';
+//import { Script } from 'vm';
 //import GraphInfo from './GraphInfo';
-
 
 class About extends Component {
 
@@ -126,13 +125,15 @@ class About extends Component {
         <input className="animate" type="radio" name="question" id="q9"/>
         <label className="animate" htmlFor="q9">Donate!</label>
         <p className="response animate">
-        BTC Address:
+        Your donation can make the difference, all amounts are greatly appreciated!
         <br/>
-        LTC Address:
+        BTC Address: 1P26GRXhHBNyyU25DQzBTGHQJqpCG6e1dW
         <br/>
-        ETH Address:
+        LTC Address: LiEoe3hfTChKu5e2GoTJS1xB8bmvgFgMCU
         <br/>
-        Paypal:
+        BCH Address: qrcc09phx9veqhu44una80j8fca98mq2j53yn4xxv0
+        <br/>
+        ETH Address: 0x6e48bc41d68dA4cB249F9336Bf32f0f5D724F571
         </p>
       </section>
     );

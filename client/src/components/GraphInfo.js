@@ -28,7 +28,7 @@ class GraphInfo extends Component {
     return false;
   }
 
-  componentWillMount() {
+/*   componentWillMount() {
     const { graphName } = this.props;
     let route;
     switch (graphName) {
@@ -72,7 +72,7 @@ class GraphInfo extends Component {
         route = "/api/get_data_stocks";
         break;
     }
-  }
+  } */
  
   dataObject() {
     const { graphType } = this.props;

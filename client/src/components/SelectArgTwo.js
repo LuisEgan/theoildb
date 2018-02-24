@@ -153,7 +153,7 @@ class SelectArgTwo extends React.Component {
                 <option value="Indonesia">Indonesia</option>
                 <option value="Iran">Iran</option>
                 <option value="Iraq">Iraq</option>
-                <option value="Kuwait">Kuwai</option>
+                <option value="Kuwait">Kuwait</option>
                 <option value="Libya">Libya</option>
                 <option value="Libya SPAJ">Libya SPAJ</option>
                 <option value="Malaysia">Malaysia</option>
