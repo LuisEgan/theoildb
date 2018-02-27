@@ -13,7 +13,7 @@ class SupplyDemand extends Component {
             <h1>Supply, Stocks and Demand Charts</h1>
             <GraphBlock Searchable="No" info="Worldwide Demand" graphName="Demand" graphType="Line" description={DemandDescription}/>
             <GraphBlock Searchable="No" info="OECD Stocks" graphName="Stocks" graphType="Line" description={StocksDescription}/>
-            <GraphBlock Searchable="Yes" info="Oil Production in Selected Countries" graphName="Production" graphType="Line" description={ProductionDescription}/>
+            <GraphBlock Searchable="Arg" info="Oil Production in Selected Countries" graphName="Production" graphType="Line" description={ProductionDescription}/>
         </div>
     );
   }

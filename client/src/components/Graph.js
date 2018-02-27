@@ -21,7 +21,7 @@ class Chart extends React.Component {
             {isDoughnut && <Doughnut data={data} />}
             {isPie && <Pie data={data} />}
             {isPolar && <Polar data={data} />}
-            {isHorizontalBar && <HorizontalBar data={data} />}
+            {isHorizontalBar && <HorizontalBar data={data} options={options}/>}
           </div>
         )}
       </div>

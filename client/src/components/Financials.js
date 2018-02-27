@@ -10,8 +10,8 @@ class Financials extends Component {
     return (
         <div id="financials">
             <h1>Financials Charts</h1>
-            <GraphBlock Searchable="No" info="Oil Volatility Index" graphName="OVX" graphType="Line" description={OVXDescription}/>
-            <GraphBlock Searchable="No" info="Standard and Poors Energy Sector Index" graphName="Sector" graphType="Line" description={SectorDescription}/>
+            <GraphBlock Searchable="Time" info="Oil Volatility Index" graphName="OVX" graphType="Line" description={OVXDescription}/>
+            <GraphBlock Searchable="Time" info="Standard and Poors Energy Sector Index" graphName="Sector" graphType="Line" description={SectorDescription}/>
             <GraphBlock Searchable="No" info="CFTC Positions" graphName="Positions" graphType="Line" description={PositionsDescription}/>
         </div>
     );

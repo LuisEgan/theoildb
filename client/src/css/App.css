@@ -39,13 +39,15 @@ body {
           height: 100%;
           width: 100%; }
           .graphBlock .row .cc div div canvas {
-            background-image: url(../images/logo1t.png);
             background-color: transparent;
             background-size: 12%;
             background-repeat: no-repeat;
             background-position: 15% 15%; }
 
 #NewsText {
+  text-align: center; }
+
+#CurveText {
   text-align: center; }
 
 h1 {

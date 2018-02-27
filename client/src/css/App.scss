@@ -35,7 +35,7 @@ body {
                     height: 100%;
                     width: 100%;
                     canvas {
-                        background-image: url(../images/logo1t.png);
+                        //background-image: url(../images/logo1t.png);
                         background-color: transparent;
                         background-size: 12%;
                         background-repeat: no-repeat;
@@ -48,6 +48,10 @@ body {
 }
 
 #NewsText {
+    text-align: center;
+}
+
+#CurveText {
     text-align: center;
 }
 

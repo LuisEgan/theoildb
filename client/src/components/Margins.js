@@ -8,7 +8,7 @@ class Margins extends Component {
     return (
         <div id="margins">
             <h1>Margins</h1>
-            <GraphBlock Searchable="Yes" info="Refinery Margins" graphName="Margins" graphType="Line" description={MarginsDescription}/>
+            <GraphBlock Searchable="Arg" info="Refinery Margins" graphName="Margins" graphType="Line" description={MarginsDescription}/>
         </div>
     );
   }

@@ -8,7 +8,7 @@ class Transportation extends Component {
     return (
         <div id="transportation">
             <h1>Transportation</h1>
-            <GraphBlock Searchable="Yes" info="Freight Rates" graphName="Rates" graphType="Line" description={RatesDescription}/>
+            <GraphBlock Searchable="Arg" info="Freight Rates" graphName="Rates" graphType="Line" description={RatesDescription}/>
         </div>
     );
   }

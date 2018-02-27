@@ -62,21 +62,30 @@ class About extends Component {
         </p>
 
         <input className="animate" type="radio" name="question" id="q4"/>
-        <label className="animate" htmlFor="q4">Q: Is your data public?</label>
+        <label className="animate" htmlFor="q4">Q: How does the Curve Chart works?</label>
+        <p className="response animate">
+        A: Everyday trading day there are many Oil contracts that can be bought or sold depending on their date of delivery. The futures curve is a chart with prices in the Y axis and the contracts
+        organized chronologically by delivery date in the X axis. To compare futures curves of different dates, the outstanding contracts for the second curve are added to a new X axis on top of the chart.
+        <br/>
+        Being able to select any trading day would take too much space in our server, that's why only the first trading day of each month can be selected.
+        </p>
+
+        <input className="animate" type="radio" name="question" id="q5"/>
+        <label className="animate" htmlFor="q5">Q: Is your data public?</label>
         <p className="response animate">
         A: Except for the News Index, all the data showed in our website is publicly available online. The news, headlines and articles used to calculate the News Index are also publicly available online.
         </p>
 
-        <input className="animate" type="radio" name="question" id="q5"/>
-        <label className="animate" htmlFor="q5"> Q: How can I contact TheOilDB?</label>
+        <input className="animate" type="radio" name="question" id="q6"/>
+        <label className="animate" htmlFor="q6"> Q: How can I contact TheOilDB?</label>
         <p className="response animate">
         A: For inquiries we are using a temporary email: theoildb@gmail.com
         <br/>
         For information about the owners check the next question.
         </p>
 
-        <input className="animate" type="radio" name="question" id="q6"/>
-        <label className="animate" htmlFor="q6"> About the creators of TheOilDB</label>
+        <input className="animate" type="radio" name="question" id="q7"/>
+        <label className="animate" htmlFor="q7"> About the creators of TheOilDB</label>
         <p className="response animate">
         • Jesus Rangel: Economist and Data Scientist, creator of TheOilDB. Everything related to the data and algorithms side of the project.
         Currently works as a free-lancer and looking for new challenges. For contact: <a href="https://www.linkedin.com/in/jesus-rangel-477668a1">Linkedin Profile</a>
@@ -86,8 +95,8 @@ class About extends Component {
         Currently works as Lead Front-end Developer at Advir. For contact: <a href="https://www.linkedin.com/in/luis-egan-565401127/">Linkedin Profile</a>
         </p>
 
-        <input className="animate" type="radio" name="question" id="q7"/>
-        <label className="animate" htmlFor="q7">Coming Soon</label>
+        <input className="animate" type="radio" name="question" id="q8"/>
+        <label className="animate" htmlFor="q8">Coming Soon</label>
         <p className="response animate">
         New features and charts will be added to the website during the next months including:
         <br/>
@@ -106,8 +115,8 @@ class About extends Component {
         • And many new charts to make data visualization better.
         </p>
 
-        <input className="animate" type="radio" name="question" id="q8"/>
-        <label className="animate" htmlFor="q8">Disclaimer</label>
+        <input className="animate" type="radio" name="question" id="q9"/>
+        <label className="animate" htmlFor="q9">Disclaimer</label>
         <p className="response animate">
         The creators of this project do not currently own or trade any financial securities related to energy commodities, including but not limited to: stocks, bonds, funds or financial derivatives.
         <br/>
@@ -118,10 +127,10 @@ class About extends Component {
         TheOilDB nor the creators of this website are responsible for financial activities held by third-parties using the information here presented.
         </p>
 
-        <input className="animate" type="radio" name="question" id="q9"/>
-        <label className="animate" htmlFor="q9">Donate!</label>
+        <input className="animate" type="radio" name="question" id="q10"/>
+        <label className="animate" htmlFor="q10">Donate!</label>
         <p className="response animate">
-        Your donation can make the difference, all amounts are greatly appreciated!
+        Helps us to add new features, data and keep the website public and free of adds, all amounts are greatly appreciated!
         <br/>
         <br/>
         • BTC Address: 1P26GRXhHBNyyU25DQzBTGHQJqpCG6e1dW
