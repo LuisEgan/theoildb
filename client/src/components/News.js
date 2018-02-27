@@ -10,8 +10,8 @@ class News extends Component {
   render() {
     return (
         <div id="news">
-            <h1>News Algorithm</h1>
-            <GraphBlock Searchable="Time" info="Oil Price vs NewsAlgorithm" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
+          <h1>News Algorithm</h1>
+          <GraphBlock Searchable="Time" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
         </div>
     );
   }

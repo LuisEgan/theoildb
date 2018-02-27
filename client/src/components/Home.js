@@ -11,7 +11,7 @@ class Home extends Component {
     return (
         <div id="home">
         <h1>Welcome to TheOilDB</h1>
-          <GraphBlock Searcheable="Time" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
+          <GraphBlock Searchable="Time" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
         </div>
     );
   }

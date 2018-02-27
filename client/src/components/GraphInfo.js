@@ -209,7 +209,7 @@ class GraphInfo extends Component {
     } else if (OnlySingleVar === "No" && DoubleYAxis === "Yes" && DoubleXAxis === "No") {
       //console.log("News Algo Case!!!");
       data = {
-        labels: data.dates1,
+        labels: data.dates,
         datasets: [
           {
             label: data.Var1Label,
