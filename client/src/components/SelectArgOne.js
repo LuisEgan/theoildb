@@ -207,7 +207,7 @@ class SelectArgOne extends React.Component {
                 <option value="UAE*">UAE*</option>
                 <option value="UAE**">UAE**</option>
                 <option value="UK">UK</option>
-                <option value="US">USA</option>
+                <option value="USA">USA</option>
                 <option value="Venezuela*">Venezuela*</option>
                 <option value="Venezuela**">Venezuela**</option>
                 <option value="Yemen">Yemen</option>

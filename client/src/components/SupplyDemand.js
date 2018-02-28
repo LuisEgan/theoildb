@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import GraphBlock from './GraphBlock';
 
+
 const DemandDescription = <p> Units: Millions of Barrels per Day | Frequency: Quarterly (Including Projections) | Source: OPEC </p>;
-const ProductionDescription = <p> Units: Barrels per Day | Frequency: Monthly | Source: OPEC &amp; IEA </p>;
+
 const StocksDescription = <p> Units: Millions of Barrels | Frequency: Monthly | Source: OPEC </p>;
 
+const ProductionDescription = <div id="Descript">
+<p> Units: Thousand Barrels per Day (Including NGLs) | Frequency: Monthly | Source: OPEC &amp; IEA </p>
+<p> *: Does not include NGLs | **: Does not include NGLs, data from OPEC </p> </div>;
 
 class SupplyDemand extends Component {
   render() {

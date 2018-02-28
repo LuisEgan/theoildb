@@ -88,11 +88,11 @@ class About extends Component {
         <label className="animate" htmlFor="q7"> About the creators of TheOilDB</label>
         <p className="response animate">
         • Jesus Rangel: Economist and Data Scientist, creator of TheOilDB. Everything related to the data and algorithms side of the project.
-        Currently works as a free-lancer and looking for new challenges. For contact: <a href="https://www.linkedin.com/in/jesus-rangel-477668a1">Linkedin Profile</a>
+        Currently works as a free-lancer and looking for new challenges. For contact:  https://www.linkedin.com/in/jesus-rangel-477668a1
         <br/>
         <br/>
         • Luis Egan: Full-stack Web Developer and Virtual Reality Programmer. Built all the back-end of the website including connections with the databases.
-        Currently works as Lead Front-end Developer at Advir. For contact: <a href="https://www.linkedin.com/in/luis-egan-565401127/">Linkedin Profile</a>
+        Currently works as Lead Front-end Developer at Advir. For contact:  https://www.linkedin.com/in/luis-egan-565401127/
         </p>
 
         <input className="animate" type="radio" name="question" id="q8"/>
@@ -130,7 +130,7 @@ class About extends Component {
         <input className="animate" type="radio" name="question" id="q10"/>
         <label className="animate" htmlFor="q10">Donate!</label>
         <p className="response animate">
-        Helps us to add new features, data and keep the website public and free of adds, all amounts are greatly appreciated!
+        Help us add new features, data and keep the website public and free of ads, all amounts are greatly appreciated!
         <br/>
         <br/>
         • BTC Address: 1P26GRXhHBNyyU25DQzBTGHQJqpCG6e1dW

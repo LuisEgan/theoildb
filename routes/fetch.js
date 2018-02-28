@@ -33,8 +33,8 @@ module.exports = app => {
             case "curve":
                 model = Curve;
                 if ( QueryCurveOne === undefined || QueryCurveOne === "" ) {
-                    QueryCurveOne = "2000-01",
-                    QueryCurveTwo = "2000-02"
+                    QueryCurveOne = "Last Day",
+                    QueryCurveTwo = ""
                 } else if ( QueryCurveOne === QueryCurveTwo ) {
                     QueryCurveTwo = ""
                 };
@@ -46,7 +46,7 @@ module.exports = app => {
                 model = Margins;
                 if ( QueryOne === undefined || QueryOne === "" ) {
                     QueryOne = "WTI (US)",
-                    QueryTwo = "Brent (EU)"
+                    QueryTwo = "Brent (US)"
                 } else if ( QueryOne === QueryTwo ) {
                     QueryTwo = ""
                 };
@@ -78,8 +78,8 @@ module.exports = app => {
             case "production":
                 model = Production;
                 if ( QueryOne === undefined || QueryOne === "" ) {
-                    QueryOne = "US",
-                    QueryTwo = "Iraq"
+                    QueryOne = "Total: Worldwide",
+                    QueryTwo = "Total: OPEC (Crude)"
                 } else if ( QueryOne === QueryTwo ) {
                     QueryTwo = ""
                 };
@@ -162,7 +162,7 @@ module.exports = app => {
                 Info = {
                     Args: ['OVX'],
                     Labels: ['OVX'],
-                    AxisLabels: ['Date (Daily)', 'USO Expected Vol.'],
+                    AxisLabels: ['Date', 'OVX'],
                     OnlySingleVar: 'Yes',
                     DoubleYAxis: 'No',
                     DoubleXAxis: 'No',
@@ -170,10 +170,10 @@ module.exports = app => {
                 break;
             case "positions":
                 Info = {
-                    Args: ['Longs', 'Shorts'],
-                    Labels: ['Longs', 'Shorts'],
+                    Args: ['Longs - Shorts'],
+                    Labels: ['Longs - Shorts'],
                     AxisLabels: ['Date (Weekly)', '# of Positions'],
-                    OnlySingleVar: 'No',
+                    OnlySingleVar: 'Yes',
                     DoubleYAxis: 'No',
                     DoubleXAxis: 'No',
                 };
@@ -182,7 +182,7 @@ module.exports = app => {
                 Info = {
                     Args: [ QueryOne, QueryTwo ],
                     Labels: [ QueryOne, QueryTwo],
-                    AxisLabels: ['Date (Monthly)', 'Daily Oil Production'],
+                    AxisLabels: ['Date (Monthly)', 'Daily Production'],
                     OnlySingleVar: 'No',
                     DoubleYAxis: 'No',
                     DoubleXAxis: 'No',
@@ -202,7 +202,7 @@ module.exports = app => {
                 Info = {
                     Args: ['S&P Energy Sector'],
                     Labels: ['S&P Energy Sector'],
-                    AxisLabels: ['Date (Daily)', 'Index Points'],
+                    AxisLabels: ['Date', 'Index Points'],
                     OnlySingleVar: 'Yes',
                     DoubleYAxis: 'No',
                     DoubleXAxis: 'No',

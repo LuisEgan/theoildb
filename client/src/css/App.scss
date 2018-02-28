@@ -25,33 +25,74 @@ body {
         height: 100%;
         background-color: rgba(168, 168, 168, 0.9);
         .cc {
+            font-size: calc(0.6vw + 0.6em);
             height: 100%;
             color: black;
             font-weight: bold;
             div {
+                font-weight: bold;
                 height: 100%;
                 width: 100%;
                 div {
                     height: 100%;
                     width: 100%;
                     canvas {
-                        //background-image: url(../images/logo1t.png);
+                        background-image: url(../images/logo1t.png);
                         background-color: transparent;
                         background-size: 12%;
                         background-repeat: no-repeat;
-                        background-position: 15% 15%; 
+                        background-position: 50% 50%;
+                        margin-bottom: calc(0.1vw + 0.3em);
                     }
                 }
             }
         }
     }
+    .Info {
+        font-size: calc(0.6vw + 0.7em);
+        margin-top: calc(0.1vw + 0.3em);
+        margin-bottom: calc(0.1vw + 0.3em);
+    }
 }
 
-#NewsText {
-    text-align: center;
+#header{
+    .navbar {
+        border-color: transparent;
+        overflow: hidden;
+        background-color: transparent;
+        .container-fluid {
+            border-color: transparent;
+            overflow: hidden;
+            background-color: transparent;
+            .navbar-header {
+                margin-left: 0px;
+                border-color: transparent;
+                overflow: hidden;
+                .navbar-toggle {
+                    background-color: rgb(224, 224, 224);
+                    color: black;
+                    padding: calc(0.4vw + 0.5em) calc(0.6vw + 0.8em);
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: calc(0.8vw + 1em);
+                    border-radius: 10px;
+                    border: none;
+                }
+            }
+            .navbar-collapse {
+                border-color: transparent;
+                overflow: hidden;
+            }
+            #myNavbar {
+                border-color: transparent;
+                overflow: hidden;
+            }
+        }
+    }
 }
 
-#CurveText {
+
+#Descript {
     text-align: center;
 }
 
@@ -62,7 +103,7 @@ h1 {
     position: relative;
     display: block;
     padding: 15px 15px;
-    font-size:calc(1vw + 1em);
+    font-size: calc(0.8vw + 1em);
     //cursor: pointer;
     background: rgb(214, 214, 214);
     color: rgb(37, 37, 37);
@@ -77,25 +118,35 @@ h1 {
 
 .SelectArg {
     margin-top: 3px;
+    font-weight: normal;
     select {
-        margin-left: 5px;
-        margin-right: 5px;
+        margin-left: 8px;
+        margin-right: 8px;
+        font-weight: normal;
+        margin-bottom: calc(0.1vw + 0.3em);
     }
     input {
+        font-weight: normal;
         background-color: white;
         color: black;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        border-radius: 10px;
+        font-size: calc(0.4vw + 0.6em);
+        border-radius: 6px;
         border: none;
+        margin-bottom: calc(0.1vw + 0.3em);
 
         &:hover {
             background-color: black;
             color: white;
             cursor: pointer;
         }
+    }
+    label {
+        font-size: calc(0.4vw + 0.6em);
+        font-weight: normal;
+        margin-bottom: calc(0.1vw + 0.3em);
     }
 }
 
@@ -126,14 +177,13 @@ h1 {
             a {
                 background-color: black;
                 color: white;
-                padding: 15px 32px;
+                padding: calc(0.4vw + 0.5em) calc(0.6vw + 0.8em);
                 text-align: center;
                 text-decoration: none;
                 display: inline-block;
-                font-size: 16px;
-                border-radius: 10px;
+                font-size: calc(0.6vw + 0.8em);
+                border-radius: calc(0.3vw + 0.4em);
                 border: none;
-
                 &:hover {
                     background-color: white;
                     color: black;
@@ -179,8 +229,9 @@ input[name=question]{
 input[name=question] + label{
     position: relative;
     display: block;
-    padding: 20px 20px;
-    font-size: 1.2em;
+    padding: 16px 16px;
+    font-size: calc(0.7vw + 0.6em);
+    font-weight: 600;
     cursor: pointer;
     background: rgba(246, 246, 246, 1);
     color: rgb(37, 37, 37);
@@ -199,11 +250,14 @@ input[name=question] + label{
     box-shadow: 0 0 10px rgba(0,0,0,.1);
     opacity: 0;
     border-radius: 3px;
+    font-size: calc(0.6vw + 0.55em);
+    font-weight: normal;
 }
 
 input[name=question]:checked + label{
     background: #F6F6F6;
     color: rgb(37, 37, 37);
+    
 }
 input[name=question]:checked + label + .response{
     overflow:auto;
@@ -214,6 +268,8 @@ input[name=question]:checked + label + .response{
     -webkit-filter: blur(0px);
     margin-bottom: 20px;
     color: white;
+    font-size: calc(0.6vw + 0.55em);
+    font-weight: normal;
 }
 
 .fixed-height{

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import GraphBlock from './GraphBlock';
 
-const MarginsDescription = <p> Units: Refinery Margins in US$ per Barrel | Frequency: Monthly | Source: OPEC </p>;
+const MarginsDescription = <div id="Descript">
+<p> Units: Refinery Margins in US$ per Barrel | Frequency: Monthly | Source: OPEC </p>
+<p> Data can not spawn the entire timeframe because of changes in the baskets published </p> </div>;
 
 class Margins extends Component {
   render() {

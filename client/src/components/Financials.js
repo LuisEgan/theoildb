@@ -3,7 +3,7 @@ import GraphBlock from './GraphBlock';
 
 const OVXDescription = <p> Units: Index Points | Frequency: Daily | Source: CBOE </p>;
 const SectorDescription = <p> Units: Index Points | Frequency: Daily | Source: S&amp;P Indices </p>;
-const PositionsDescription = <p> Units: Total Positions in Futures and Options | Frequency: Weekly | Source: CFTC </p>;
+const PositionsDescription = <p> Units: Long minus Short positions in Futures and Options | Frequency: Weekly | Source: CFTC </p>;
 
 class Financials extends Component {
   render() {

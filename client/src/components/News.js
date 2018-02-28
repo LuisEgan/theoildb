@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GraphBlock from './GraphBlock';
 
-const NewsDescription = <div id="NewsText">
+const NewsDescription = <div id="Descript">
 <p> Oil Price - Units: US$ per Barrel (CL1) | Frequency: Daily | Source: CME </p>
 <p> NewsAlgorithm - Units: % of Positive News | Frequency: Daily | Source: TheOilDB </p>
 <p> For information about how the algorithm is calculated, check the "About" section </p></div>;
