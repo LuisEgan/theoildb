@@ -28,6 +28,7 @@ class SelectCurveOne extends React.Component {
                 <select value={this.state.value} onChange={this.handleChange}>
                     <option value="">(Day)</option>
                     <option value="Last Day">Last Day</option>
+                    <option value="2018-03">2018-03</option>                    
                     <option value="2018-02">2018-02</option>
                     <option value="2018-01">2018-01</option>
                     <option value="2017-12">2017-12</option>
@@ -78,7 +79,6 @@ class SelectCurveOne extends React.Component {
                     <option value="2014-03">2014-03</option>
                     <option value="2014-02">2014-02</option>
                     <option value="2014-01">2014-01</option>
-
                     <option value="2013-12">2013-12</option>
                     <option value="2013-11">2013-11</option>
                     <option value="2013-10">2013-10</option>

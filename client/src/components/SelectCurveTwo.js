@@ -28,6 +28,7 @@ class SelectCurveTwo extends React.Component {
                 <select value={this.state.value} onChange={this.handleChange}>
                     <option value="">(Day)</option>
                     <option value="Last Day">Last Day</option>
+                    <option value="2018-03">2018-03</option>   
                     <option value="2018-02">2018-02</option>
                     <option value="2018-01">2018-01</option>
                     <option value="2017-12">2017-12</option>

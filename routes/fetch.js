@@ -152,7 +152,7 @@ module.exports = app => {
                 Info = {
                     Args: ['Algo', 'Price'],
                     Labels: ['News Algorithm', 'Oil Returns'],
-                    AxisLabels: ['Date (Daily)', '% of Pos. News', '4-month Oil Returns (%)'],
+                    AxisLabels: ['Date', '% of Pos. News', '4-month Oil Returns (%)'],
                     OnlySingleVar: 'No',
                     DoubleYAxis: 'Yes',
                     DoubleXAxis: 'No',
