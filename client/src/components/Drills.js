@@ -10,7 +10,7 @@ class Drills extends Component {
     return (
         <div id="production">
             <h1>Drills</h1>
-            <GraphBlock Searchable="No" info="Drills in US and Canada" graphName="WeeklyDrills" graphType="Line" description={WDDescription}/>
+            <GraphBlock Searchable="Time" info="Drills in US and Canada" graphName="WeeklyDrills" graphType="Line" description={WDDescription}/>
             <GraphBlock Searchable="Arg" info="Drills in Selected Countries" graphName="MonthlyDrills" graphType="Line" description={MDDescription}/>
         </div>
     );

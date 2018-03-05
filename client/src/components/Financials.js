@@ -12,7 +12,7 @@ class Financials extends Component {
             <h1>Financials Charts</h1>
             <GraphBlock Searchable="Time" info="Oil Volatility Index" graphName="OVX" graphType="Line" description={OVXDescription}/>
             <GraphBlock Searchable="Time" info="Standard and Poors Energy Sector Index" graphName="Sector" graphType="Line" description={SectorDescription}/>
-            <GraphBlock Searchable="No" info="CFTC Positions" graphName="Positions" graphType="Line" description={PositionsDescription}/>
+            <GraphBlock Searchable="Time" info="CFTC Positions" graphName="Positions" graphType="Line" description={PositionsDescription}/>
         </div>
     );
   }

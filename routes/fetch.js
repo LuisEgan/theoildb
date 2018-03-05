@@ -74,6 +74,9 @@ module.exports = app => {
                 break;
             case "positions":
                 model = Positions;
+                if ( QueryTF === undefined || QueryTF === "" ) {
+                    QueryTF = "3 months"
+                };
                 break;
             case "production":
                 model = Production;
@@ -104,6 +107,9 @@ module.exports = app => {
                 break;
             case "weeklydrills":
                 model = WeeklyDrills;
+                if ( QueryTF === undefined || QueryTF === "" ) {
+                    QueryTF = "3 months"
+                };
                 break;
         }
         let Info;
@@ -429,20 +435,245 @@ module.exports = app => {
                     }
                     res.send(Data);
                 });
-            } else if ( QueryTF === "1 year" || QueryTF === "2 years" || QueryTF === "All" ) {
+            } else if ( QueryTF === "1 year" || QueryTF === "2 years" || QueryTF === "5 years" || QueryTF === "All" ) {
                 var Limit = 0;
                 switch(QueryTF) {
                     case "1 year":
                         Limit = 53;
                         break;
                     case "2 years":
-                        Limit = 106;
+                        Limit = 105;
+                        break;
+                    case "5 years":
+                        Limit = 261;
                         break;
                     case "All":
                         Limit = 10000;
                         break;
                 };
                 model.find({Timeframe: 'Weekly'}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
+                    var var1 = [], var2 = [], dates = [];
+                    modelInstances.forEach( instance => {
+                        if ( instance.Arg === Info.Args[0] ) {
+                            if (typeof instance.Value === String) {
+                                var1.push(Number.Nan);
+                                dates.push(instance.Date);
+                            } else {
+                                var1.push(instance.Value);
+                                dates.push(instance.Date);
+                            }
+                        } else if ( instance.Arg === Info.Args[1] ) {
+                            if (typeof instance.Value === String) {
+                                var2.push(Number.Nan);
+                            } else {
+                                var2.push(instance.Value);
+                            }
+                        }
+                    });
+                    var1 = var1.reverse();
+                    var2 = var2.reverse();
+                    dates = dates.reverse();
+                    const Var1Label = Info.Labels[0], Var2Label = Info.Labels[1];
+                    const XLabel = Info.AxisLabels[0], Y1Label = Info.AxisLabels[1], Y2Label = Info.AxisLabels[2];
+                    const OnlySingleVar = Info.OnlySingleVar, DoubleYAxis= Info.DoubleYAxis, DoubleXAxis= Info.DoubleXAxis;
+                    const Data = {
+                        OnlySingleVar,
+                        DoubleXAxis,
+                        DoubleYAxis,
+                        Var1Label,
+                        Var2Label,
+                        XLabel,
+                        Y1Label,
+                        Y2Label,
+                        dates, 
+                        var1,
+                        var2
+                    }
+                    res.send(Data);
+                })
+            }
+        } else if ( col === "positions" ) {
+            if ( QueryTF === "3 months" || QueryTF === "6 months" || QueryTF === "9 months" || QueryTF === "1 year" ) {
+                var Limit = 0;
+                switch(QueryTF) {
+                    case "3 months":
+                        Limit = 13;
+                        break;
+                    case "6 months":
+                        Limit = 26;
+                        break;
+                    case "9 months":
+                        Limit = 39;
+                        break;
+                    case "1 year":
+                        Limit = 52;
+                        break;
+                };
+                model.find({}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
+                    var var1 = [], var2 = [], dates = [];
+                    modelInstances.forEach( instance => {
+                        if ( instance.Arg === Info.Args[0] ) {
+                            if (typeof instance.Value === String) {
+                                var1.push(Number.Nan);
+                                dates.push(instance.Date);
+                            } else {
+                                var1.push(instance.Value);
+                                dates.push(instance.Date);
+                            }
+                        } else if ( instance.Arg === Info.Args[1] ) {
+                            if (typeof instance.Value === String) {
+                                var2.push(Number.Nan);
+                            } else {
+                                var2.push(instance.Value);
+                            }
+                        }
+                    });
+                    var1 = var1.reverse();
+                    var2 = var2.reverse();
+                    dates = dates.reverse();
+                    const Var1Label = Info.Labels[0], Var2Label = Info.Labels[1];
+                    const XLabel = Info.AxisLabels[0], Y1Label = Info.AxisLabels[1], Y2Label = Info.AxisLabels[2];
+                    const OnlySingleVar = Info.OnlySingleVar, DoubleYAxis= Info.DoubleYAxis, DoubleXAxis= Info.DoubleXAxis;
+                    const Data = {
+                        OnlySingleVar,
+                        DoubleXAxis,
+                        DoubleYAxis,
+                        Var1Label,
+                        Var2Label,
+                        XLabel,
+                        Y1Label,
+                        Y2Label,
+                        dates, 
+                        var1,
+                        var2
+                    }
+                    res.send(Data);
+                });
+            } else if ( QueryTF === "2 years" || QueryTF === "5 years" || QueryTF === "All" ) {
+                var Limit = 0;
+                switch(QueryTF) {
+                    case "2 years":
+                        Limit = 25;
+                        break;
+                    case "5 years":
+                        Limit = 61;
+                        break;
+                    case "All":
+                        Limit = 10000;
+                        break;
+                };
+                model.find({Timeframe: 'Monthly'}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
+                    var var1 = [], var2 = [], dates = [];
+                    modelInstances.forEach( instance => {
+                        if ( instance.Arg === Info.Args[0] ) {
+                            if (typeof instance.Value === String) {
+                                var1.push(Number.Nan);
+                                dates.push(instance.Date);
+                            } else {
+                                var1.push(instance.Value);
+                                dates.push(instance.Date);
+                            }
+                        } else if ( instance.Arg === Info.Args[1] ) {
+                            if (typeof instance.Value === String) {
+                                var2.push(Number.Nan);
+                            } else {
+                                var2.push(instance.Value);
+                            }
+                        }
+                    });
+                    var1 = var1.reverse();
+                    var2 = var2.reverse();
+                    dates = dates.reverse();
+                    const Var1Label = Info.Labels[0], Var2Label = Info.Labels[1];
+                    const XLabel = Info.AxisLabels[0], Y1Label = Info.AxisLabels[1], Y2Label = Info.AxisLabels[2];
+                    const OnlySingleVar = Info.OnlySingleVar, DoubleYAxis= Info.DoubleYAxis, DoubleXAxis= Info.DoubleXAxis;
+                    const Data = {
+                        OnlySingleVar,
+                        DoubleXAxis,
+                        DoubleYAxis,
+                        Var1Label,
+                        Var2Label,
+                        XLabel,
+                        Y1Label,
+                        Y2Label,
+                        dates, 
+                        var1,
+                        var2
+                    }
+                    res.send(Data);
+                })
+            }
+        } else if ( col === "weeklydrills" ) {
+            if ( QueryTF === "3 months" || QueryTF === "6 months" || QueryTF === "9 months" || QueryTF === "1 year" ) {
+                var Limit = 0;
+                switch(QueryTF) {
+                    case "3 months":
+                        Limit = 26;
+                        break;
+                    case "6 months":
+                        Limit = 52;
+                        break;
+                    case "9 months":
+                        Limit = 78;
+                        break;
+                    case "1 year":
+                        Limit = 104;
+                        break;
+                };
+                model.find({}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
+                    var var1 = [], var2 = [], dates = [];
+                    modelInstances.forEach( instance => {
+                        if ( instance.Arg === Info.Args[0] ) {
+                            if (typeof instance.Value === String) {
+                                var1.push(Number.Nan);
+                                dates.push(instance.Date);
+                            } else {
+                                var1.push(instance.Value);
+                                dates.push(instance.Date);
+                            }
+                        } else if ( instance.Arg === Info.Args[1] ) {
+                            if (typeof instance.Value === String) {
+                                var2.push(Number.Nan);
+                            } else {
+                                var2.push(instance.Value);
+                            }
+                        }
+                    });
+                    var1 = var1.reverse();
+                    var2 = var2.reverse();
+                    dates = dates.reverse();
+                    const Var1Label = Info.Labels[0], Var2Label = Info.Labels[1];
+                    const XLabel = Info.AxisLabels[0], Y1Label = Info.AxisLabels[1], Y2Label = Info.AxisLabels[2];
+                    const OnlySingleVar = Info.OnlySingleVar, DoubleYAxis= Info.DoubleYAxis, DoubleXAxis= Info.DoubleXAxis;
+                    const Data = {
+                        OnlySingleVar,
+                        DoubleXAxis,
+                        DoubleYAxis,
+                        Var1Label,
+                        Var2Label,
+                        XLabel,
+                        Y1Label,
+                        Y2Label,
+                        dates, 
+                        var1,
+                        var2
+                    }
+                    res.send(Data);
+                });
+            } else if ( QueryTF === "2 years" || QueryTF === "5 years" || QueryTF === "All" ) {
+                var Limit = 0;
+                switch(QueryTF) {
+                    case "2 years":
+                        Limit = 50;
+                        break;
+                    case "5 years":
+                        Limit = 122;
+                        break;
+                    case "All":
+                        Limit = 20000;
+                        break;
+                };
+                model.find({Timeframe: 'Monthly'}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
                     var var1 = [], var2 = [], dates = [];
                     modelInstances.forEach( instance => {
                         if ( instance.Arg === Info.Args[0] ) {

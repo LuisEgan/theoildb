@@ -20,7 +20,7 @@ class SelectTimeFrame extends React.Component {
     }
   
     render() {
-        if (this.props.graphName === "OVX" || this.props.graphName === "Sector" || this.props.graphName === "NewsAlgo"){
+        if ( this.props.graphName === "OVX" || this.props.graphName === "Sector" || this.props.graphName === "NewsAlgo" ){
             return (
             <form onSubmit={this.handleSubmit}>
                 <label>
@@ -32,7 +32,27 @@ class SelectTimeFrame extends React.Component {
                     <option value="9 months">9 months (Daily)</option>
                     <option value="1 year">1 year (Weekly)</option>
                     <option value="2 years">2 years (Weekly)</option>
+                    <option value="5 years">5 years (Weekly)</option>
                     <option value="All">All (Weekly)</option>
+                </select>
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+            );
+        } else if ( this.props.graphName === "Positions" || this.props.graphName === "WeeklyDrills" ){
+            return (
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                Select Timeframe: 
+                <select value={this.state.value} onChange={this.handleChange}>
+                    <option value="">(Timeframe)</option>
+                    <option value="3 months">3 months (Weekly)</option>
+                    <option value="6 months">6 months (Weekly)</option>
+                    <option value="9 months">9 months (Weekly)</option>
+                    <option value="1 year">1 year (Weekly)</option>
+                    <option value="2 years">2 years (Monthly)</option>
+                    <option value="5 years">5 years (Monthly)</option>
+                    <option value="All">All (Monthly)</option>
                 </select>
                 </label>
                 <input type="submit" value="Submit" />
