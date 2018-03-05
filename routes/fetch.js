@@ -500,7 +500,7 @@ module.exports = app => {
                 model.find({}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
                     var var1 = [], var2 = [], dates = [];
                     modelInstances.forEach( instance => {
-                        var1.push(instance.Value);
+                        var1.push(instance.Value * 100);
                         var2.push(instance.Price);
                         dates.push(instance.Date);
                     });
@@ -541,7 +541,7 @@ module.exports = app => {
                 model.find({Timeframe: 'Weekly'}).sort('-Date').limit(Limit).exec(function(err, modelInstances) {
                     var var1 = [], var2 = [], dates = [];
                     modelInstances.forEach( instance => {
-                        var1.push(instance.Value);
+                        var1.push(instance.Value * 100);
                         var2.push(instance.Price);
                         dates.push(instance.Date);
                     });
