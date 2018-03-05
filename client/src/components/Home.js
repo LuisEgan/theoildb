@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import GraphBlock from './GraphBlock';
 
 const NewsDescription = <div id="Descript">
-<p> Right Y Axis - Units: % Change in price | Frequency: Daily | Source: CME </p>
-<p> Left Y Axis: % of Positive News | Frequency: Daily | Source: TheOilDB </p>
+<p> Right Y Axis - Units: % Change in price | Frequency: Daily/Weekly | Source: CME </p>
+<p> Left Y Axis: % of Positive News | Frequency: Daily/Weekly | Source: TheOilDB </p>
 <p> For information about how the algorithm is calculated, check the "About" section </p></div>;
 
 class Home extends Component {
