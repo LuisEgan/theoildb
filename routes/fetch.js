@@ -151,8 +151,8 @@ module.exports = app => {
             case "newsalgo":
                 Info = {
                     Args: ['Algo', 'Price'],
-                    Labels: ['News Algorithm', 'Oil Returns'],
-                    AxisLabels: ['Date', '% of Pos. News', '4-month Oil Returns (%)'],
+                    Labels: ['News Algorithm', 'Oil 4-month Returns'],
+                    AxisLabels: ['Date', 'Positive News (%)', 'Oil 4-month Returns (%)'],
                     OnlySingleVar: 'No',
                     DoubleYAxis: 'Yes',
                     DoubleXAxis: 'No',
