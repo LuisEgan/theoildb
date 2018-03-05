@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import GraphBlock from './GraphBlock';
 
 const NewsDescription = <div id="Descript">
-<p> Oil Price - Units: US$ per Barrel (CL1) | Frequency: Daily | Source: CME </p>
-<p> NewsAlgorithm - Units: % of Positive News | Frequency: Daily | Source: TheOilDB </p>
+<p> Right Y Axis - Units: % Change in price | Frequency: Daily | Source: CME </p>
+<p> Left Y Axis: % of Positive News | Frequency: Daily | Source: TheOilDB </p>
 <p> For information about how the algorithm is calculated, check the "About" section </p></div>;
 
 class Home extends Component {
@@ -11,7 +11,7 @@ class Home extends Component {
     return (
         <div id="home">
         <h1>Welcome to TheOilDB</h1>
-          <GraphBlock Searchable="Time" info="CL1 vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
+          <GraphBlock Searchable="Time" info="% Change in price vs % of Positive News" graphName="NewsAlgo" graphType="Line" description={NewsDescription}/>
         </div>
     );
   }
