@@ -3,7 +3,7 @@ import GraphBlock from './GraphBlock';
 
 const MarginsDescription = <div id="Descript">
 <p> Units: Refinery Margins in US$ per Barrel | Frequency: Monthly | Source: OPEC </p>
-<p> Data can not spawn the entire timeframe because of changes in the baskets published </p> </div>;
+<p> Some baskets may not spawn the entire timeframe because they were replaced by others </p> </div>;
 
 class Margins extends Component {
   render() {
